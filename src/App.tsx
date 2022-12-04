@@ -1,4 +1,5 @@
 import { Wrap, WrapItem, Avatar } from "@chakra-ui/react";
+import { MakeNewGroup } from "./components/MakeNewGroup";
 
 export const App = () => {
   return (
@@ -24,6 +25,9 @@ export const App = () => {
       <WrapItem>
         <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
       </WrapItem>
+      <>
+      <MakeNewGroup/>
+      </>
     </Wrap>
   );
 };
