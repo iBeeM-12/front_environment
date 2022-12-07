@@ -1,5 +1,10 @@
 import React from "react";
+import { HomeGroup } from "./HomeGroup";
 
 export const Home = () => {
-  return <p>Home</p>;
+  return (
+    <>
+      <HomeGroup />
+    </>
+  );
 };
