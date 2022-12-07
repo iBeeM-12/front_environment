@@ -10,8 +10,8 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="group" element={<Group />} />
-          <Route path="profile" element={<Profile />} />
+          <Route path="/group" element={<Group />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/posts/:id" element={<Post />} />
         </Routes>
       </BrowserRouter>
