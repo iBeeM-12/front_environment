@@ -1,22 +1,23 @@
 import { Box } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
-import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
+import { Avatar } from "@chakra-ui/react";
 import { MemberInfo0 } from "../data/dummyData";
-import { Stack, HStack, VStack, Text } from "@chakra-ui/react";
+import { HStack, Text, Center } from "@chakra-ui/react";
 
 export const HomeTop = () => {
   return (
     <>
-      <HStack spacing="24px" key={MemberInfo0[1]}>
-        {/* youso1 */}
-        <Box bg="wite" boxSize="150">
+      {/* FIXME: スタイルをピクセルで指定しているためもう少しいい感じにする */}
+      <HStack bg="#F6C745" h={"150px"} spacing={10} key={MemberInfo0[1]}>
+        <Box w={"240px"} h={"150px"}>
           <Image src={MemberInfo0[0]} alt="name1" />
         </Box>
 
-        {/* youso2 */}
         <Box>
           <Text fontSize="3xl">{MemberInfo0[1]}</Text>
-          <Avatar name="temp1" src={MemberInfo0[2]} />
+          <Center>
+            <Avatar name="temp1" src={MemberInfo0[2]} />
+          </Center>
         </Box>
       </HStack>
     </>
