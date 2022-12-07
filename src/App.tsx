@@ -1,33 +1,20 @@
-import { Wrap, WrapItem, Avatar } from "@chakra-ui/react";
-import { MakeNewGroup } from "./components/MakeNewGroup";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./components/Home";
+import { About } from "./components/About";
+import { Contact } from "./components/Contact";
+import { Post } from "./components/Post";
 
 export const App = () => {
   return (
-    <Wrap>
-      <WrapItem>
-        <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
-      </WrapItem>
-      <WrapItem>
-        <Avatar name="Kola Tioluwani" src="https://bit.ly/tioluwani-kolawole" />
-      </WrapItem>
-      <WrapItem>
-        <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
-      </WrapItem>
-      <WrapItem>
-        <Avatar name="Ryan Florence" src="https://bit.ly/ryan-florence" />
-      </WrapItem>
-      <WrapItem>
-        <Avatar name="Prosper Otemuyiwa" src="https://bit.ly/prosper-baba" />
-      </WrapItem>
-      <WrapItem>
-        <Avatar name="Christian Nwamba" src="https://bit.ly/code-beast" />
-      </WrapItem>
-      <WrapItem>
-        <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
-      </WrapItem>
-      <>
-      <MakeNewGroup/>
-      </>
-    </Wrap>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="/posts/:id" element={<Post />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
