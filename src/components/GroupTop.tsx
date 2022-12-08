@@ -15,9 +15,6 @@ export const GroupTop = () => {
 
         <Box>
           <Text fontSize="3xl">{GroupInfo0[1]}</Text>
-          <Center>
-            <Avatar name="temp1" src={GroupInfo0[2]} />
-          </Center>
         </Box>
       </HStack>
     </>
