@@ -5,6 +5,7 @@ import { HomeGroup } from "./HomeGroup";
 import { PlusButton } from "./PlusButton";
 import { Tab1 } from "./Tab";
 
+import { Axios } from "../axios";
 export const Home = () => {
   return (
     <>
@@ -21,6 +22,8 @@ export const Home = () => {
         <HomeGroup />
         <HomeGroup />
       </Box>
+
+      <Axios />
     </>
   );
 };
