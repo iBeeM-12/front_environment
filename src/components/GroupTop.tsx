@@ -3,6 +3,7 @@ import { Image } from "@chakra-ui/react";
 import { Avatar } from "@chakra-ui/react";
 import { GroupInfo0 } from "../data/dummyData";
 import { HStack, Text } from "@chakra-ui/react";
+import { ReturnButton } from "./ReturnButton";
 
 export const GroupTop = () => {
   return (
@@ -14,7 +15,13 @@ export const GroupTop = () => {
         </Box>
 
         <Box>
+          <HStack>
+            <Box w={"140px"} />
+            <ReturnButton />
+          </HStack>
+          <Box h={"30px"} />
           <Text fontSize="3xl">{GroupInfo0[1]}</Text>
+          <Box h={"30px"} />
         </Box>
       </HStack>
     </>
