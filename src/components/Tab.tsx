@@ -1,24 +1,22 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import { Home } from "./Home";
-import { Group } from "./Group";
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from "@chakra-ui/react";
+import { MemberView } from "./MemberView";
+import { PlusButton } from "./PlusButton";
 
 export const Tab1 = () => {
   return (
     <>
-      <Tabs variant="soft-rounded" colorScheme="yellow">
+      <Tabs variant="enclosed">
         <TabList>
-          {/*グループ？ホーム？figmaで言うpage1の左上 */}
-          <Tab>ホーム</Tab>
-          <Tab>メンバー</Tab>
-          <Tab>チャット</Tab>
+          <Tab _selected={{ color: "black", bg: "#E5D1C8" }}>メンバー</Tab>
+          <Tab _selected={{ color: "black", bg: "#E5D1C8" }}> チャット</Tab>
           {/*チャット画面については後々 */}
         </TabList>
         <TabPanels>
-          <TabPanel>
-            <p>Home</p>
-          </TabPanel>
-          <TabPanel>
-            <p>Member</p>
+          <TabPanel p="0px">
+            <Box bg={"#E5D1C8"}>
+              <PlusButton text={"メンバーの追加"} />
+              <MemberView />
+            </Box>
           </TabPanel>
           <TabPanel>
             <p>Chat</p>

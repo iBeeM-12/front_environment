@@ -37,7 +37,7 @@ const MemberList = [
 
 export const MemberView = () => {
   return (
-    <Box bg={"#E5D1C8"}>
+    <Box bg={"#E5D1C8"} minH={"5000px"}>
       <VStack marginRight={100}>
         {MemberList.map((member) => {
           return (
