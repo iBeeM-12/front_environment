@@ -3,7 +3,6 @@ import { Home } from "./components/Home";
 import { Group } from "./components/Group";
 import { Profile } from "./components/Profile";
 import { Post } from "./components/Post";
-
 export const App = () => {
   return (
     <>
