@@ -5,26 +5,23 @@ import { Group } from "./Group";
 export const Tab1 = () => {
   return (
     <>
-      <Tabs variant="soft-rounded" colorScheme="#F6C745">
+      <Tabs variant="soft-rounded" colorScheme="yellow">
         <TabList>
-          <Tab>ホーム</Tab> {/*グループ？ホーム？figmaで言うpage1の左上 */}
+          {/*グループ？ホーム？figmaで言うpage1の左上 */}
+          <Tab>ホーム</Tab>
           <Tab>メンバー</Tab>
           <Tab>チャット</Tab>
           {/*チャット画面については後々 */}
         </TabList>
         <TabPanels>
           <TabPanel>
-            <p>
-              <Home />
-            </p>
+            <p>Home</p>
           </TabPanel>
           <TabPanel>
-            <p>
-              <Group />
-            </p>
+            <p>Member</p>
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+            <p>Chat</p>
           </TabPanel>
         </TabPanels>
       </Tabs>
