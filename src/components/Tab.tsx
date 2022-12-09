@@ -7,8 +7,20 @@ export const Tab1 = () => {
     <>
       <Tabs variant="enclosed">
         <TabList>
-          <Tab _selected={{ color: "black", bg: "#E5D1C8" }}>メンバー</Tab>
-          <Tab _selected={{ color: "black", bg: "#E5D1C8" }}> チャット</Tab>
+          <Tab
+            bg="#C8C8C8"
+            color="gray"
+            _selected={{ color: "black", bg: "#E5D1C8" }}
+          >
+            メンバー
+          </Tab>
+          <Tab
+            bg="#C8C8C8"
+            color="gray"
+            _selected={{ color: "black", bg: "#E5D1C8" }}
+          >
+            チャット
+          </Tab>
           {/*チャット画面については後々 */}
         </TabList>
         <TabPanels>
