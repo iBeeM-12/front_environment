@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 import { HomeTop } from "./HomeTop";
 import { HomeGroup } from "./HomeGroup";
 import { PlusButton } from "./PlusButton";
-
+import { Axios } from "../axios";
 export const Home = () => {
   return (
     <>
@@ -20,6 +20,8 @@ export const Home = () => {
         <HomeGroup />
         <HomeGroup />
       </Box>
+
+      <Axios />
     </>
   );
 };
