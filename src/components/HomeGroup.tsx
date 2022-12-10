@@ -1,11 +1,13 @@
 import { HStack, Image, Stack, VStack } from "@chakra-ui/react";
 import { Avatar, AvatarGroup } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import { avatarList } from "../data/dummyData";
 import { SecessionButton } from "./SecessionBottun";
 
 //ホーム画面のグループの状態一覧
 export const HomeGroup = () => {
+  const navigate = useNavigate();
   return (
     <>
       <HStack spacing={10}>
