@@ -1,9 +1,9 @@
-import { Box, Center } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
-import { Avatar } from "@chakra-ui/react";
 import { GroupInfo0 } from "../data/dummyData";
 import { HStack, Text } from "@chakra-ui/react";
 
+//グループ画面
 export const GroupTop = () => {
   return (
     <>

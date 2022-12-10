@@ -4,6 +4,7 @@ import { HomeTop } from "./HomeTop";
 import { HomeGroup } from "./HomeGroup";
 import { PlusButton } from "./PlusButton";
 
+//ホーム画面くみ上げ
 export const Home = () => {
   return (
     <>
