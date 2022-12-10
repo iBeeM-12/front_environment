@@ -1,3 +1,4 @@
+import { ButtonOfCreateGroup } from "./ButtonOfCreateGroup";
 import { InputGroupName } from "./InputGroupName";
 import { UserSearch } from "./UserIDSearch";
 
@@ -6,6 +7,7 @@ export const CreateGroup = () => {
     <>
       <InputGroupName />
       <UserSearch />
+      <ButtonOfCreateGroup />
     </>
   );
 };
