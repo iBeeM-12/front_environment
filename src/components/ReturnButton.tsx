@@ -6,7 +6,7 @@ import React from "react";
 export const ReturnButton = () => {
   return (
     <Stack spacing={4} direction="row" align="center">
-      <Button colorScheme="gray" size="xs">
+      <Button bg="#EEA239" color="#FFFFFF" size="xs">
         戻る
       </Button>
     </Stack>

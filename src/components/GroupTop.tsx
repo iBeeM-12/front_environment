@@ -1,20 +1,33 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Center, VStack } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import { GroupInfo0 } from "../data/dummyData";
 import { HStack, Text } from "@chakra-ui/react";
+import { ReturnButton } from "./ReturnButton";
+import { RemakeButton } from "./RemakeBottun";
+import { builtinModules } from "module";
 
 //グループ画面
 export const GroupTop = () => {
   return (
     <>
       {/* FIXME: スタイルをピクセルで指定しているためもう少しいい感じにする */}
-      <HStack bg="#F6C745" h={"150px"} spacing={10} key={GroupInfo0[1]}>
+      <HStack h={"150px"} key={GroupInfo0[1]}>
         <Box w={"150px"} h={"150px"}>
           <Image src={GroupInfo0[0]} alt="name1" />
         </Box>
 
         <Box>
-          <Text fontSize="3xl">{GroupInfo0[1]}</Text>
+          <VStack>
+            <Box h="20px"></Box>
+            <HStack>
+              <Box w="125px"></Box>
+              <RemakeButton />
+              <ReturnButton />
+            </HStack>
+            <Box h={"30px"} />
+            <Text fontSize="3xl">{GroupInfo0[1]}</Text>
+            <Box h={"30px"} />
+          </VStack>
         </Box>
       </HStack>
     </>

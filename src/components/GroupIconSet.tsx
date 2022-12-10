@@ -6,12 +6,11 @@ import React from "react";
 type Props = {
   text: string;
 };
-export const GroupIconSet = ({ text }: Props) => {
+export const GroupIconSet = () => {
   return (
     <Stack spacing={3}>
-      <Text fontSize="2xl">グループ名：</Text>
-      <Text fontSize="2xl">グループアイコンを設定</Text>
-      <Box w={"240px"} h={"135px"}>
+      <Text fontSize="xl">グループアイコンを設定</Text>
+      <Box w={"150px"} h={"150px"}>
         <Image src={GroupInfo0[0]} alt="name1" />
       </Box>
     </Stack>

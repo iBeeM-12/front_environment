@@ -1,5 +1,10 @@
 import React from "react";
+import { FreeText } from "./FreeText";
 
 export const Profile = () => {
-  return <p>Profile</p>;
+  return (
+    <>
+      <FreeText />
+    </>
+  );
 };

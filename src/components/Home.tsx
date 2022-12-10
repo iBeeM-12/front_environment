@@ -9,7 +9,6 @@ export const Home = () => {
   return (
     <>
       <HomeTop />
-
       <Box bg={"#E5D1C8"}>
         <Box h={2} />
         <PlusButton text={"グループの追加"} />
