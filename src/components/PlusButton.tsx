@@ -2,6 +2,8 @@ import { HStack, Icon, Text } from "@chakra-ui/react";
 import { PlusSquareIcon } from "@chakra-ui/icons";
 import React from "react";
 
+//プラスボタンのコンポーネント
+
 type Props = {
   text: string;
 };

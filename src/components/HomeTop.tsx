@@ -4,6 +4,8 @@ import { Avatar } from "@chakra-ui/react";
 import { MemberInfo0 } from "../data/dummyData";
 import { HStack, Text, Center } from "@chakra-ui/react";
 
+//ホーム画面上部のコンポーネント
+
 export const HomeTop = () => {
   return (
     <>

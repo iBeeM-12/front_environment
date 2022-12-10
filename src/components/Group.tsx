@@ -3,6 +3,7 @@ import { MemberView } from "./MemberView";
 import { GroupTop } from "./GroupTop";
 import { VStack } from "@chakra-ui/react";
 import { Tab1 } from "./Tab";
+//グループ画面の枠
 
 export const Group = () => {
   return (
