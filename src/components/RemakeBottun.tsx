@@ -10,7 +10,6 @@ export const RemakeButton = () => {
         color="black"
         size="xs"
         onClick={() => {
-          // console.log("ositeruyo");
           navigate1("/group/create");
         }}
       >
@@ -29,7 +28,6 @@ export const ProfileRemakeButton = () => {
         color="black"
         size="xs"
         //onClick={() => {
-        // console.log("ositeruyo");
         //navigate2("/group/create");}}
       >
         編集

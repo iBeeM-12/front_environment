@@ -16,7 +16,6 @@ export const PlusButton = ({ text }: Props) => {
         as={PlusSquareIcon}
         boxSize={9}
         onClick={() => {
-          // console.log("ositeruyo");
           navigate("/group/create");
         }}
       />

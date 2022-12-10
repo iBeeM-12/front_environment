@@ -13,7 +13,6 @@ export const ReturnButton = () => {
         color="#FFFFFF"
         size="xs"
         onClick={() => {
-          // console.log("ositeruyo");
           navigate("/");
         }}
       >

@@ -18,7 +18,6 @@ export const HomeTop = () => {
             src={MemberInfo0[0]}
             alt="name1"
             onClick={() => {
-              // console.log("ositeruyo");
               navigate("/profile");
             }}
           />
