@@ -3,8 +3,13 @@ import { Input } from "@chakra-ui/react";
 export const FreeText = () => {
   return (
     <>
-      <p>プロフィール</p>
-      <Input placeholder="プロフィールを入力してね!" size="sm" />
+      <Input
+        placeholder="プロフィールを入力してね!"
+        bg="#FFFFFF"
+        size="sm"
+        w="370px"
+        borderRadius="md"
+      />
     </>
   );
 };
