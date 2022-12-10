@@ -12,10 +12,12 @@ export const GroupTop = () => {
     <>
       {/* FIXME: スタイルをピクセルで指定しているためもう少しいい感じにする */}
       <HStack h={"150px"} key={GroupInfo0[1]}>
-        <Box w={"150px"} h={"150px"}>
-          <Image src={GroupInfo0[0]} alt="name1" />
-        </Box>
-
+        <VStack>
+          <Box h={"10px"}></Box>
+          <Box w={"150px"} h={"150px"}>
+            <Image src={GroupInfo0[0]} alt="name1" />
+          </Box>
+        </VStack>
         <Box>
           <VStack>
             <Box h="20px"></Box>
