@@ -16,11 +16,6 @@ export const Home = () => {
           <Box borderRadius="xl" w="370px" bg={"#E5D1C8"}>
             <PlusButtonGroup text={"グループの追加"} />
             <HomeGroup />
-            <HomeGroup />
-            <HomeGroup />
-            <HomeGroup />
-            <HomeGroup />
-            <HomeGroup />
           </Box>
         </HStack>
       </Box>
