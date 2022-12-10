@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
-import { Avatar } from "@chakra-ui/react";
 import { MemberInfo0 } from "../data/dummyData";
 import { HStack, Text, Center } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { MyAvatar } from "./MyAvatar";
 
 //ホーム画面上部のコンポーネント
 
@@ -27,7 +27,7 @@ export const HomeTop = () => {
         <Box>
           <Text fontSize="3xl">{MemberInfo0[1]}</Text>
           <Center>
-            <Avatar name="temp1" src={MemberInfo0[2]} />
+            <MyAvatar />
           </Center>
         </Box>
       </HStack>
