@@ -7,8 +7,10 @@ import { Tab1 } from "./Tab";
 export const Group = () => {
   return (
     <>
-      <GroupTop />
-      <Tab1 />
+      <VStack bg="#F6C745" spacing={1}>
+        <GroupTop />
+        <Tab1 />
+      </VStack>
     </>
   );
 };

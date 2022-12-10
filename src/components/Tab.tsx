@@ -30,8 +30,10 @@ export const Tab1 = () => {
               <MemberView />
             </Box>
           </TabPanel>
-          <TabPanel>
-            <p>Chat</p>
+          <TabPanel p="0px">
+            <Box minW="390px" minH="5000px" bg={"#E5D1C8"}>
+              <p>チャット</p>
+            </Box>
           </TabPanel>
         </TabPanels>
       </Tabs>
