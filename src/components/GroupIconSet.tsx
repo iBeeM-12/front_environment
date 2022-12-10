@@ -13,6 +13,6 @@ export const GroupIconSet = ({ text }: Props) => {
       <Box w={"240px"} h={"135px"}>
         <Image src={GroupInfo0[0]} alt="name1" />
       </Box>
-    </Stack>
+    </Stack> //特に意味のないコメント
   );
 };
