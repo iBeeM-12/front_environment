@@ -15,7 +15,7 @@ export const MemberInfo0 = [
   "./data/19360.png", //状態表示用画像
 ];
 
-export const MenberInfo1 = [
+export const MemberInfo1 = [
   "https://www.mcdonalds.co.jp/product_images/4/1070-Teriyaki-McBurger.m.png?20221031150120", //個人用サムネ
   "名前2", //名前
   "./data/49415.png", //状態表示用画像
