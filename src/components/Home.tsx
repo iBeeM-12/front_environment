@@ -2,7 +2,7 @@ import React from "react";
 import { Box, HStack } from "@chakra-ui/react";
 import { HomeTop } from "./HomeTop";
 import { HomeGroup } from "./HomeGroup";
-import { PlusButton } from "./PlusButton";
+import { PlusButtonGroup } from "./PlusButton";
 
 //ホーム画面くみ上げ
 export const Home = () => {
@@ -14,7 +14,7 @@ export const Home = () => {
         <HStack>
           <Box w="2px"></Box>
           <Box borderRadius="xl" w="370px" bg={"#E5D1C8"}>
-            <PlusButton text={"グループの追加"} />
+            <PlusButtonGroup text={"グループの追加"} />
             <HomeGroup />
             <HomeGroup />
             <HomeGroup />

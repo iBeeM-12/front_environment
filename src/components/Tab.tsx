@@ -1,6 +1,6 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from "@chakra-ui/react";
 import { MemberView } from "./MemberView";
-import { PlusButton } from "./PlusButton";
+import { PlusButtonMember } from "./PlusButton";
 
 export const Tab1 = () => {
   return (
@@ -26,7 +26,7 @@ export const Tab1 = () => {
         <TabPanels>
           <TabPanel p="0px">
             <Box bg={"#E5D1C8"}>
-              <PlusButton text={"メンバーの追加"} />
+              <PlusButtonMember text={"メンバーの追加"} />
               <MemberView />
             </Box>
           </TabPanel>

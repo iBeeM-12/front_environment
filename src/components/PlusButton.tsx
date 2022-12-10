@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 type Props = {
   text: string;
 };
-export const PlusButton = ({ text }: Props) => {
+export const PlusButtonGroup = ({ text }: Props) => {
   const navigate = useNavigate();
   return (
     <HStack>
@@ -18,6 +18,22 @@ export const PlusButton = ({ text }: Props) => {
         onClick={() => {
           navigate("/group/create");
         }}
+      />
+      <Text fontSize="xl">{text}</Text>
+    </HStack>
+  );
+};
+
+export const PlusButtonMember = ({ text }: Props) => {
+  const navigate = useNavigate();
+  return (
+    <HStack>
+      <Icon
+        as={PlusSquareIcon}
+        boxSize={9}
+        //onClick={() => {
+        //navigate("/group/create");
+        //}}
       />
       <Text fontSize="xl">{text}</Text>
     </HStack>
