@@ -1,10 +1,9 @@
-import { Box, Center, VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import { GroupInfo0 } from "../data/dummyData";
 import { HStack, Text } from "@chakra-ui/react";
 import { ReturnButton } from "./ReturnButton";
 import { RemakeButton } from "./RemakeBottun";
-import { builtinModules } from "module";
 
 //グループ画面
 export const GroupTop = () => {

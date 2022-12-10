@@ -3,9 +3,6 @@ import { GroupInfo0 } from "../data/dummyData";
 import React from "react";
 
 //グループアイコンの設定画面のテキストと画像枠
-type Props = {
-  text: string;
-};
 export const GroupIconSet = () => {
   return (
     <Stack spacing={3}>
