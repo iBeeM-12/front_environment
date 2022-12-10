@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import { HomeTop } from "./HomeTop";
 import { HomeGroup } from "./HomeGroup";
 import { PlusButton } from "./PlusButton";
@@ -8,17 +8,21 @@ import { PlusButton } from "./PlusButton";
 export const Home = () => {
   return (
     <>
-      <HomeTop />
-      <Box bg={"#E5D1C8"}>
-        <Box h={2} />
-        <PlusButton text={"グループの追加"} />
-        <Box h={2} />
-        <HomeGroup />
-        <HomeGroup />
-        <HomeGroup />
-        <HomeGroup />
-        <HomeGroup />
-        <HomeGroup />
+      <Box bg={"#F6C745"} minH="5000px">
+        <HomeTop />
+        <Box h="10px"></Box>
+        <HStack>
+          <Box w="2px"></Box>
+          <Box borderRadius="xl" w="370px" bg={"#E5D1C8"}>
+            <PlusButton text={"グループの追加"} />
+            <HomeGroup />
+            <HomeGroup />
+            <HomeGroup />
+            <HomeGroup />
+            <HomeGroup />
+            <HomeGroup />
+          </Box>
+        </HStack>
       </Box>
     </>
   );
