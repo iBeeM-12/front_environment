@@ -28,8 +28,7 @@ export const ProfileRemakeButton = () => {
         color="black"
         size="xs"
         //onClick={() => {
-        //navigate2("/group/create");
-        //}}
+        //navigate2("/group/create");}}
       >
         編集
       </Button>
