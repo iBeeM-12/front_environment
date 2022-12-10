@@ -6,7 +6,12 @@ export const UserSearch = () => {
     <>
       <HStack>
         <IconButton aria-label="Search database" icon={<SearchIcon />} />
-        <Input variant={"outline"} size="sm" placeholder="友達のユーザーID" />
+        <Input
+          variant={"outline"}
+          size="sm"
+          bg="#FFFFFF"
+          placeholder="友達のユーザーID"
+        />
       </HStack>
     </>
   );
