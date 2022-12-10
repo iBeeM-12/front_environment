@@ -10,16 +10,14 @@ export const HomeGroup = () => {
   const navigate = useNavigate();
   return (
     <>
-      <HStack
-        spacing={10}
-        onClick={() => {
-          navigate("/group");
-        }}
-      >
+      <HStack spacing={10}>
         <Stack>
           <Image
             src="gibbresh.png"
             fallbackSrc="https://via.placeholder.com/150"
+            onClick={() => {
+              navigate("/group");
+            }}
           />
         </Stack>
         <VStack spacing={4}>
