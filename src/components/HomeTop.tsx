@@ -22,7 +22,7 @@ export const HomeTop = () => {
   ]);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = "http://localhost:8000/home/user/?user_id=1";
+    const url = "http://localhost:8000/home/user/get_user_info?user_id=1";
     // const url_icon = "http://localhost:8000/home/user/icon/";
 
     axios
