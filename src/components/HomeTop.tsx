@@ -14,7 +14,12 @@ import axios from "axios";
 // type Temp = [number, string, number];
 
 export const HomeTop = () => {
-  const [name, setName] = useState<[number, string, number]>([0, "hoge", 0]);
+  const [name, setName] = useState<[number, string, string, string]>([
+    0,
+    "hoge",
+    "hogei",
+    "hougei",
+  ]);
   const navigate = useNavigate();
   useEffect(() => {
     const url = "http://localhost:8000/home/user/?user_id=1";
@@ -31,7 +36,7 @@ export const HomeTop = () => {
         //   [10, "hoge!!!", 10],
         //   [20, "foofoo", 20],
         // ]; //res.data で取得を想定
-        setName([res.data[0], res.data[1], res.data[2]]);
+        setName([res.data[0], res.data[1], res.data[2], res.data[3]]);
       })
       .catch((error) => {
         console.error(error);
@@ -43,8 +48,10 @@ export const HomeTop = () => {
       <HStack bg="#F6C745" h={"150px"} spacing={10} key={MemberInfo0[1]}>
         <Box w={"240px"} h={"150px"}>
           <Image
-            //src=name[]  自分のサムネ
-            src={MemberInfo0[0]}
+            //src=name[2]  自分のサムネにしたい
+            src={
+              "https://raw.githubusercontent.com/iBeeM-12/Backend/main/images/NEKO.png?token=GHSAT0AAAAAAB2477NNVXABWNSHZHX5I4DUY4VFJBQ"
+            }
             alt="name1"
             onClick={() => {
               navigate("/profile");
