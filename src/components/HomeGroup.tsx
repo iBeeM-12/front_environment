@@ -15,7 +15,7 @@ export const HomeGroup = () => {
 
   console.log(id);
   useEffect(() => {
-    const url = "http://localhost:8000/home/my_group/?user_id=1";
+    const url = "http://localhost:8000/home/users_group_list?user_id=1";
     // const url_icon = "http://localhost:8000/home/user/icon/";
 
     axios
