@@ -65,7 +65,7 @@ export const HomeGroup = () => {
                   })}
                 </AvatarGroup>
               </VStack>
-              <SecessionButton />
+              <SecessionButton grpid={grpid[0]} />
             </HStack>
           </>
         );
