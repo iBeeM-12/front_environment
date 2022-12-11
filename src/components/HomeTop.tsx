@@ -50,8 +50,9 @@ export const HomeTop = () => {
           <Image
             //src=name[2]  自分のサムネにしたい
             src={
-              "https://raw.githubusercontent.com/iBeeM-12/Backend/main/images/NEKO.png?token=GHSAT0AAAAAAB2477NMS4TVNJMV2VNU5TZAY4VGFLA"
+              "https://cdn.discordapp.com/attachments/1038863032522117151/1051346517199441990/NEKO.png"
             }
+            maxH={"150px"}
             alt="name1"
             onClick={() => {
               navigate("/profile");
