@@ -23,7 +23,7 @@ export const MemberInfo1 = [
 
 export const GroupInfo0 = [
   "https://www.catcafemeow.com/wp/wp-content/uploads/2021/11/%E3%81%B2%E3%81%8B%E3%82%8B%E3%81%8F%E3%82%93_%E7%94%B7%E3%81%AE%E5%AD%90-2048x2048.jpeg", //グループサムネ
-  "ポケモン好き", //名前
+  "490", //名前
 ];
 
 export const GroupInfo1 = [

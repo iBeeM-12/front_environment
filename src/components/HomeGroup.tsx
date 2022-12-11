@@ -4,7 +4,7 @@ import { Text } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { avatarList } from "../data/dummyData";
+import { avatarList, GroupInfo0 } from "../data/dummyData";
 import { SecessionButton } from "./SecessionBottun";
 
 //ホーム画面のグループの状態一覧
@@ -40,8 +40,7 @@ export const HomeGroup = () => {
             <HStack spacing={10}>
               <Stack key={grpid[0]}>
                 <Image
-                  src="gibbresh.png"
-                  fallbackSrc="https://via.placeholder.com/150"
+                  src={GroupInfo0[0]}
                   onClick={() => {
                     navigate("/group");
                   }}
