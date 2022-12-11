@@ -40,7 +40,7 @@ export const HomeGroup = () => {
             <HStack spacing={10}>
               <Stack key={grpid[0]}>
                 <Image
-                  //{grpid[2]}を入れる
+                  //{grpid[2]}を入れたい
                   src="gibbresh.png"
                   fallbackSrc="https://via.placeholder.com/150"
                   onClick={() => {
