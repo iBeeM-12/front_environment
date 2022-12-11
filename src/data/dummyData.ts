@@ -18,7 +18,7 @@ export const MemberInfo0 = [
 export const MemberInfo1 = [
   "https://www.mcdonalds.co.jp/product_images/4/1070-Teriyaki-McBurger.m.png?20221031150120", //個人用サムネ
   "名前2", //名前
-  "./data/49415.png", //状態表示用画像
+  "https://cdn.discordapp.com/attachments/1038862997998817350/1051063653627080804/suneko_neko.PNG", //状態表示用画像
 ];
 
 export const GroupInfo0 = [
@@ -34,15 +34,15 @@ export const GroupInfo1 = [
 export const avatarList = [
   {
     name: "Taro",
-    src: "https://i.pinimg.com/736x/53/1e/44/531e449c6d536d03f98a91ac82b1833d.jpg",
+    src: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063658718957598/study_neko.PNG",
   },
   {
     name: "Jiro",
-    src: "https://uploadfile.bizhizu.cn/up/e5/9b/d7/e59bd7b44b8382f8305f860b736a0642.jpg",
+    src: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063653299916820/solo_neko.PNG",
   },
   {
     name: "Sabro",
-    src: "https://i.pinimg.com/originals/5a/21/da/5a21dabae82da8a4a28e3523ad5cd114.jpg",
+    src: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063655187353610/free_neko.PNG",
   },
   {
     name: "Siro",
@@ -62,31 +62,31 @@ export const MemberList = [
   {
     name: "Taro",
     smn: "https://i.pinimg.com/736x/53/1e/44/531e449c6d536d03f98a91ac82b1833d.jpg",
-    stat: "https://livedoor.blogimg.jp/nijianime/imgs/5/9/59a27a65-s.jpg",
+    stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654235246632/walk_neko.PNG",
   },
   {
     name: "Jiro",
     smn: "https://uploadfile.bizhizu.cn/up/e5/9b/d7/e59bd7b44b8382f8305f860b736a0642.jpg",
-    stat: "https://livedoor.blogimg.jp/nijianime/imgs/5/9/59a27a65-s.jpg",
+    stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063653916495882/talk_neko.PNG",
   },
   {
     name: "Sabro",
     smn: "https://i.pinimg.com/originals/5a/21/da/5a21dabae82da8a4a28e3523ad5cd114.jpg",
-    stat: "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hamachese/20221016/20221016040112.jpg",
+    stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654549827634/want_to_join_neko.PNG",
   },
   {
     name: "Siro",
     smn: "https://neko.omosiro.org/wp-content/uploads/2015/01/airou.jpg",
-    stat: "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hamachese/20221016/20221016040112.jpg",
+    stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654864408586/eat_neko.PNG",
   },
   {
     name: "Goro",
     smn: "https://i1.sndcdn.com/avatars-000737354359-nqceq9-t500x500.jpg",
-    stat: "https://livedoor.blogimg.jp/nijianime/imgs/5/9/59a27a65-s.jpg",
+    stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063655543877672/shh_neko.PNG",
   },
   {
     name: "sith",
     smn: "https://i.ytimg.com/vi/dY8QbAOxlww/maxresdefault.jpg",
-    stat: "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hamachese/20221016/20221016040112.jpg",
+    stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063658396012594/sleep_neko.PNG",
   },
 ];
