@@ -10,7 +10,7 @@ import { SecessionButton } from "./SecessionBottun";
 //ホーム画面のグループの状態一覧
 export const HomeGroup = () => {
   const [id, setName] = useState<(string | number)[][]>([
-    [0, "dummy", "dummy2", 0],
+    [0, "dummy", "dummy2"],
   ]);
 
   console.log(id);
@@ -34,33 +34,42 @@ export const HomeGroup = () => {
   const navigate = useNavigate();
   return (
     <>
-      <HStack spacing={10}>
-        <Stack>
-          <Image
-            src="gibbresh.png"
-            fallbackSrc="https://via.placeholder.com/150"
-            onClick={() => {
-              navigate("/group");
-            }}
-          />
-        </Stack>
-        <VStack spacing={4}>
-          <Text fontSize="xl">group1</Text>
-          <AvatarGroup size="md" max={3}>
-            {/** お作法1: return の中で if 文のようなロジックを使用するときは {} で囲う */}
-            {/** お作法2: map を使うときは必ず return を書く */}
-            {/** (一応) お作法3: map を使うときは必ず key を与える (描画には問題ないけど、concole で警告が出る) */}
-            {avatarList.map((avatar) => {
-              return (
-                <Avatar key={avatar.name} name={avatar.name} src={avatar.src} />
-                // avatar.name = ステータスID
-              );
-            })}
-          </AvatarGroup>
-        </VStack>
-        <SecessionButton />
-      </HStack>
-
+      {id.map((grpid) => {
+        return (
+          <>
+            <HStack spacing={10}>
+              <Stack key={grpid[0]}>
+                <Image
+                  src="gibbresh.png"
+                  fallbackSrc="https://via.placeholder.com/150"
+                  onClick={() => {
+                    navigate("/group");
+                  }}
+                />
+              </Stack>
+              <VStack spacing={4}>
+                <Text fontSize="xl">{grpid[1]}</Text>
+                <AvatarGroup size="md" max={3}>
+                  {/** お作法1: return の中で if 文のようなロジックを使用するときは {} で囲う */}
+                  {/** お作法2: map を使うときは必ず return を書く */}
+                  {/** (一応) お作法3: map を使うときは必ず key を与える (描画には問題ないけど、concole で警告が出る) */}
+                  {avatarList.map((avatar) => {
+                    return (
+                      <Avatar
+                        key={avatar.name}
+                        name={avatar.name}
+                        src={avatar.src}
+                      />
+                      // avatar.name = ステータスID
+                    );
+                  })}
+                </AvatarGroup>
+              </VStack>
+              <SecessionButton />
+            </HStack>
+          </>
+        );
+      })}
     </>
   );
 };
