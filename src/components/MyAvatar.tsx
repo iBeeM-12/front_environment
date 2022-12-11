@@ -33,7 +33,8 @@ export const MyAvatar = () => {
                   <VStack>
                     <Button size="xl" rounded={"full"}>
                       {/* 状態表示の画像にする */}
-                      <Avatar src={member.stat} />
+                      <Avatar key={member.name} src={member.stat} />
+                      {/* keyの内容：ステータスの名前 crcの内容：ステータスの表示 */}
                     </Button>
                     {/* 状態の名前にする */}
                     <p>uuuu</p>

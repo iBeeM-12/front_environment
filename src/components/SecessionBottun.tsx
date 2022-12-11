@@ -7,12 +7,12 @@ import {
   PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
   Button,
   Portal,
 } from "@chakra-ui/react";
 
 //グループ退会ボタンのコンポーネント
+//?ボタンをグループごとに対応させる方法
 
 export const SecessionButton = () => {
   return (
@@ -27,6 +27,7 @@ export const SecessionButton = () => {
             <PopoverHeader fontSize="md">本当に退会しますか？</PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
+              {/* ボタンを押すと、押した人のユーザーIDと、グループの番号が返される */}
               <Button colorScheme="red">退会</Button>
             </PopoverBody>
             <PopoverFooter fontSize="md">

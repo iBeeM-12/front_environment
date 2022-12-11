@@ -29,6 +29,7 @@ export const HomeGroup = () => {
             {avatarList.map((avatar) => {
               return (
                 <Avatar key={avatar.name} name={avatar.name} src={avatar.src} />
+                // avatar.name = ステータスID
               );
             })}
           </AvatarGroup>

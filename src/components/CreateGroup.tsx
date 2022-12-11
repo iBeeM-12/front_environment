@@ -14,12 +14,16 @@ export const CreateGroup = () => {
           <ButtonOfCreateGroup />
           <ReturnButton />
         </HStack>
-        <InputGroupName />
+        <Box w="350px">
+          <InputGroupName />
+        </Box>
         <HStack>
           <Box w="100px"></Box>
           <GroupIconSet />
         </HStack>
-        <UserSearch />
+        <Box w="350px">
+          <UserSearch />
+        </Box>
       </Box>
     </>
   );
