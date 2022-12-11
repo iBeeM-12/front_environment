@@ -63,30 +63,36 @@ export const MemberList = [
     name: "Taro",
     smn: "https://i.pinimg.com/736x/53/1e/44/531e449c6d536d03f98a91ac82b1833d.jpg",
     stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654235246632/walk_neko.PNG",
+    statename: "外出中",
   },
   {
     name: "Jiro",
     smn: "https://uploadfile.bizhizu.cn/up/e5/9b/d7/e59bd7b44b8382f8305f860b736a0642.jpg",
     stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063653916495882/talk_neko.PNG",
+    statename: "話し中",
   },
   {
     name: "Sabro",
     smn: "https://i.pinimg.com/originals/5a/21/da/5a21dabae82da8a4a28e3523ad5cd114.jpg",
     stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654549827634/want_to_join_neko.PNG",
+    statename: "誘ってほしい！",
   },
   {
     name: "Siro",
     smn: "https://neko.omosiro.org/wp-content/uploads/2015/01/airou.jpg",
     stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654864408586/eat_neko.PNG",
+    statename: "もぐもぐタイム",
   },
   {
     name: "Goro",
     smn: "https://i1.sndcdn.com/avatars-000737354359-nqceq9-t500x500.jpg",
     stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063655543877672/shh_neko.PNG",
+    statename: "話しかけるな！！！！！",
   },
   {
     name: "sith",
     smn: "https://i.ytimg.com/vi/dY8QbAOxlww/maxresdefault.jpg",
     stat: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063658396012594/sleep_neko.PNG",
+    statename: "お前も、もう、おやすみ",
   },
 ];

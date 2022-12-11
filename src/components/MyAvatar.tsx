@@ -35,7 +35,7 @@ export const MyAvatar = () => {
                       {/* keyの内容：ステータスの名前 crcの内容：ステータスの表示 */}
                     </Button>
                     {/* 状態の名前にする */}
-                    <p>uuuu</p>
+                    <p>{member.statename}</p>
                   </VStack>
                 );
               })}
