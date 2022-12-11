@@ -48,8 +48,10 @@ export const HomeTop = () => {
       <HStack bg="#F6C745" h={"150px"} spacing={10} key={MemberInfo0[1]}>
         <Box w={"240px"} h={"150px"}>
           <Image
-            //src=name[]  自分のサムネ
-            src={name[2]}
+            //src=name[2]  自分のサムネにしたい
+            src={
+              "https://raw.githubusercontent.com/iBeeM-12/Backend/main/images/NEKO.png?token=GHSAT0AAAAAAB2477NNVXABWNSHZHX5I4DUY4VFJBQ"
+            }
             alt="name1"
             onClick={() => {
               navigate("/profile");
