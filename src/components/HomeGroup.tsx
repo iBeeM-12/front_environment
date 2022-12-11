@@ -1,12 +1,36 @@
 import { HStack, Image, Stack, VStack } from "@chakra-ui/react";
 import { Avatar, AvatarGroup } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { avatarList } from "../data/dummyData";
 import { SecessionButton } from "./SecessionBottun";
 
 //ホーム画面のグループの状態一覧
 export const HomeGroup = () => {
+  const [id, setName] = useState<(string | number)[][]>([
+    [0, "dummy", "dummy2", 0],
+  ]);
+
+  console.log(id);
+  useEffect(() => {
+    const url = "http://localhost:8000/home/my_group/?user_id=1";
+    // const url_icon = "http://localhost:8000/home/user/icon/";
+
+    axios
+      .get(url)
+      .then((res) => {
+        console.log(res.data);
+        // 本当は型判定とかしたほうがよいが…
+        // 詳しくは zod とか調べてみるとよいかも！？
+        setName(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   const navigate = useNavigate();
   return (
     <>
@@ -36,6 +60,7 @@ export const HomeGroup = () => {
         </VStack>
         <SecessionButton />
       </HStack>
+
     </>
   );
 };
