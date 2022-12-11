@@ -50,7 +50,7 @@ export const HomeTop = () => {
           <Image
             //src=name[2]  自分のサムネにしたい
             src={
-              "https://raw.githubusercontent.com/iBeeM-12/Backend/main/images/NEKO.png?token=GHSAT0AAAAAAB2477NNVXABWNSHZHX5I4DUY4VFJBQ"
+              "https://raw.githubusercontent.com/iBeeM-12/Backend/main/images/NEKO.png?token=GHSAT0AAAAAAB2477NMS4TVNJMV2VNU5TZAY4VGFLA"
             }
             alt="name1"
             onClick={() => {
