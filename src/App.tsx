@@ -10,7 +10,7 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/group" element={<Group />} />
+          <Route path="/group/:id" element={<Group />} />
           <Route path="/group/create" element={<CreateGroup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/posts/:id" element={<Post />} />

@@ -48,10 +48,7 @@ export const HomeTop = () => {
       <HStack bg="#F6C745" h={"150px"} spacing={10} key={MemberInfo0[1]}>
         <Box w={"240px"} h={"150px"}>
           <Image
-            //src=name[2]  自分のサムネにしたい
-            src={
-              "https://cdn.discordapp.com/attachments/1038863032522117151/1051346517199441990/NEKO.png"
-            }
+            src={name[2]}
             maxH={"150px"}
             alt="name1"
             onClick={() => {
