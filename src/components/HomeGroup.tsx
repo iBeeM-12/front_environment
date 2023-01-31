@@ -9,7 +9,8 @@ import { SecessionButton } from "./SecessionBottun";
 
 //ホーム画面のグループの状態一覧
 export const HomeGroup = () => {
-  const [id, setName] = useState<(string | number)[][]>([
+  //二個目の要素が今回numberになってしまっているため対応
+  const [id, setId] = useState<[number, string | number, string][]>([
     [0, "dummy", "dummy2"],
   ]);
 
@@ -21,10 +22,9 @@ export const HomeGroup = () => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res.data);
         // 本当は型判定とかしたほうがよいが…
         // 詳しくは zod とか調べてみるとよいかも！？
-        setName(res.data);
+        setId(res.data);
       })
       .catch((error) => {
         console.error(error);
@@ -40,9 +40,10 @@ export const HomeGroup = () => {
             <HStack spacing={10}>
               <Stack key={grpid[0]}>
                 <Image
-                  src={GroupInfo0[0]}
+                  src={grpid[2]}
                   onClick={() => {
-                    navigate("/group");
+                    navigate(`/group/${grpid[0]}`);
+                    //サムネと名前は受け渡したほうが楽かも
                   }}
                 />
               </Stack>
