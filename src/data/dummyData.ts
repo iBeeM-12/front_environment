@@ -115,3 +115,22 @@ export const StampList = [
     img: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654864408586/eat_neko.PNG",
   },
 ];
+
+export const CannedList = [
+  {
+    num: "1",
+    str: "お疲れ様！",
+  },
+  {
+    num: "2",
+    str: "フレンド増やしてもいい？",
+  },
+  {
+    num: "3",
+    str: "ありがとう！",
+  },
+  {
+    num: "4",
+    str: "ごめんね！",
+  },
+];

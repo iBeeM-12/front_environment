@@ -1,8 +1,8 @@
 //チャットのスタンプ表示用吹き出し
 //スタンプバージョンと、定型文バージョンを用意
 
-import { Box, HStack, Image } from "@chakra-ui/react";
-import { StampList } from "../data/dummyData";
+import { Box, Button, HStack, Image } from "@chakra-ui/react";
+import { CannedList, StampList } from "../data/dummyData";
 
 //欲しいもの スタンプ画像のＵＲＬ
 //出力するもの 選択されたスタンプに振られた番号
@@ -22,6 +22,34 @@ export const Stampver = () => {
                     console.log(stamp.num); //バックエンドに渡すように変える
                   }}
                 />
+              </>
+            );
+          })}
+        </HStack>
+      </Box>
+    </>
+  );
+};
+
+export const Cannedver = () => {
+  return (
+    <>
+      <Box w="390px" bg="C8C8C8" p={0}>
+        <HStack spacing={3}>
+          {CannedList.map((canned) => {
+            return (
+              <>
+                <Button
+                  fontSize="md"
+                  colorScheme="orange"
+                  variant="solid"
+                  size={"md"}
+                  key={canned.num}
+                  color="whitegray"
+                >
+                  {/* バックエンドに渡す値 */}
+                  {canned.str}
+                </Button>
               </>
             );
           })}

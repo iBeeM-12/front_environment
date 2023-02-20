@@ -1,7 +1,9 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from "@chakra-ui/react";
+import exp from "constants";
 import { Chat } from "./Chat";
 import { MemberView } from "./MemberView";
 import { PlusButtonMember } from "./PlusButton";
+import { Cannedver, Stampver } from "./StampSelect";
 
 export const Tab1 = () => {
   return (
@@ -35,6 +37,27 @@ export const Tab1 = () => {
             <Box minW="390px" minH="5000px" bg={"#E5D1C8"}>
               <Chat />
             </Box>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </>
+  );
+};
+
+export const Tab2 = () => {
+  return (
+    <>
+      <Tabs variant="enclosed">
+        <TabList>
+          <Tab>ネコスタンプ</Tab>
+          <Tab>定型文</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <Stampver />
+          </TabPanel>
+          <TabPanel>
+            <Cannedver />
           </TabPanel>
         </TabPanels>
       </Tabs>
