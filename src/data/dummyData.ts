@@ -96,3 +96,22 @@ export const MemberList = [
     statename: "お前も、もう、おやすみ",
   },
 ];
+
+export const StampList = [
+  {
+    num: "1",
+    img: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063653916495882/talk_neko.PNG",
+  },
+  {
+    num: "2",
+    img: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654235246632/walk_neko.PNG",
+  },
+  {
+    num: "3",
+    img: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654549827634/want_to_join_neko.PNG",
+  },
+  {
+    num: "4",
+    img: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654864408586/eat_neko.PNG",
+  },
+];
