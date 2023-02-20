@@ -1,4 +1,5 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from "@chakra-ui/react";
+import { Chat } from "./Chat";
 import { MemberView } from "./MemberView";
 import { PlusButtonMember } from "./PlusButton";
 
@@ -32,7 +33,7 @@ export const Tab1 = () => {
           </TabPanel>
           <TabPanel p="0px">
             <Box minW="390px" minH="5000px" bg={"#E5D1C8"}>
-              <p>チャット</p>
+              <Chat />
             </Box>
           </TabPanel>
         </TabPanels>
