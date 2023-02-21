@@ -22,7 +22,6 @@ export const Tab1 = () => {
           >
             チャット
           </Tab>
-          {/*チャット画面については後々 */}
         </TabList>
         <TabPanels>
           <TabPanel p="0px">
