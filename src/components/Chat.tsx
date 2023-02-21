@@ -1,17 +1,26 @@
 //チャット用画面
-import { GroupTop } from "./GroupTop";
-import { Box, VStack } from "@chakra-ui/react";
-import { Stampver } from "./StampSelect";
+import { Box, HStack, VStack } from "@chakra-ui/react";
 import { Tab2 } from "./Tab";
 import { ChatLeftIcon } from "./ChatLeftIcon";
+import { Chatbubble } from "./Chatbubble";
+import { Chatname } from "./Chatname";
 
 export const Chat = () => {
   return (
     <>
-      <VStack bg="#F6C745" spacing={1}>
-        <ChatLeftIcon />
-        <Tab2 />
-      </VStack>
+      <Box bg="E5D1C8" w="100%" p={2}>
+        <VStack bg="#FFFFFF" spacing={1}>
+          <HStack>
+            <VStack>
+              <Chatname />
+              <ChatLeftIcon />
+            </VStack>
+            <Chatbubble />
+            <Box bg="white" w="250px" p={2}></Box>
+          </HStack>
+          <Tab2 />
+        </VStack>
+      </Box>
     </>
   );
 };

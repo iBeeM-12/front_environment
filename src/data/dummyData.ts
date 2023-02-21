@@ -140,3 +140,24 @@ export const CannedList = [
     str: "ごめんね！",
   },
 ];
+
+export const ChatList = [
+  {
+    time: "1",
+    name: "Taro",
+    chattype: "1",
+    talk: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654864408586/eat_neko.PNG",
+  },
+  {
+    time: "2",
+    name: "Ziro",
+    chattype: "2",
+    talk: "お疲れ様",
+  },
+  {
+    time: "3",
+    name: "Saburo",
+    chattype: "1",
+    talk: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654549827634/want_to_join_neko.PNG",
+  },
+];

@@ -46,7 +46,7 @@ export const Tab1 = () => {
 export const Tab2 = () => {
   return (
     <>
-      <Tabs variant="enclosed">
+      <Tabs variant="enclosed" bg="#D9D9D9">
         <TabList>
           <Tab>ネコスタンプ</Tab>
           <Tab>定型文</Tab>
