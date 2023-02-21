@@ -33,26 +33,32 @@ export const GroupInfo1 = [
 
 export const avatarList = [
   {
+    num: "1",
     name: "Taro",
     src: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063658718957598/study_neko.PNG",
   },
   {
+    num: "2",
     name: "Jiro",
     src: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063653299916820/solo_neko.PNG",
   },
   {
+    num: "3",
     name: "Sabro",
     src: "https://cdn.discordapp.com/attachments/1038862997998817350/1051063655187353610/free_neko.PNG",
   },
   {
+    num: "4",
     name: "Siro",
     src: "https://2.bp.blogspot.com/-4cDI5-IdyKs/WUdY336_nbI/AAAAAAABFAg/xxpZDJEt6ncUrMQwU7Ug-HQA8-eRI36eACLcBGAs/s400/pet_cat_sit.png",
   },
   {
+    num: "5",
     name: "Goro",
     src: "https://i1.sndcdn.com/avatars-000737354359-nqceq9-t500x500.jpg",
   },
   {
+    num: "6",
     name: "roku",
     src: "https://th.bing.com/th/id/OIP.CsFV-tWOkLjeHobsxgYR1QHaH9?pid=ImgDet&rs=1",
   },
