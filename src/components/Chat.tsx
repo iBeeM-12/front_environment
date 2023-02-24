@@ -1,24 +1,23 @@
 //チャット用画面
-import { Box, HStack, VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
+import { MyChat } from "./MyChat";
+import { ReadOrNot } from "./ReadOrNot";
 import { Tab2 } from "./Tab";
-import { ChatLeftIcon } from "./ChatLeftIcon";
-import { Chatbubble } from "./Chatbubble";
-import { Chatname } from "./Chatname";
+import { YourChat } from "./YourChat";
 
 export const Chat = () => {
   return (
     <>
       <Box bg="E5D1C8" w="100%" p={2}>
         <VStack bg="#FFFFFF" spacing={1}>
-          <HStack>
-            <VStack>
-              <Chatname />
-              <ChatLeftIcon />
-            </VStack>
-            <Chatbubble />
-            <Box bg="white" w="250px" p={2}></Box>
-          </HStack>
+          <YourChat />
+          <MyChat />
+          <YourChat />
+          <ReadOrNot />
+          <YourChat />
+
           <Tab2 />
+          <Box bg="#FFFFFF" w="100%" h="5px" p={4}></Box>
         </VStack>
       </Box>
     </>
