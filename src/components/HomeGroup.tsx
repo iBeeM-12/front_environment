@@ -4,7 +4,6 @@ import { Text } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { avatarList, GroupInfo0 } from "../data/dummyData";
 import { SecessionButton } from "./SecessionBottun";
 
 //ホーム画面のグループの状態一覧
@@ -14,17 +13,40 @@ export const HomeGroup = () => {
     [0, "dummy", "dummy2"],
   ]);
 
+  const [avatar, setAvatar] = useState<[number, string, string][]>([
+    [
+      1,
+      "Taro",
+      "https://cdn.discordapp.com/attachments/1038862997998817350/1051063658718957598/study_neko.PNG",
+    ],
+  ]);
+
   console.log(id);
   useEffect(() => {
-    const url = "http://localhost:8000/home/users_group_list?user_id=1";
+    const url_id = "http://localhost:8000/home/users_group_list?user_id=1";
     // const url_icon = "http://localhost:8000/home/user/icon/";
 
     axios
-      .get(url)
+      .get(url_id)
       .then((res) => {
         // 本当は型判定とかしたほうがよいが…
         // 詳しくは zod とか調べてみるとよいかも！？
         setId(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    const url_avatar = "home/group_member?group_id={grpid[0]}";
+
+    // ここでのgroup_id=はそれぞれ変化する。どうするのか?
+
+    axios
+      .get(url_avatar)
+      .then((res) => {
+        setAvatar(res.data);
       })
       .catch((error) => {
         console.error(error);
@@ -53,15 +75,8 @@ export const HomeGroup = () => {
                   {/** お作法1: return の中で if 文のようなロジックを使用するときは {} で囲う */}
                   {/** お作法2: map を使うときは必ず return を書く */}
                   {/** (一応) お作法3: map を使うときは必ず key を与える (描画には問題ないけど、concole で警告が出る) */}
-                  {avatarList.map((avatar) => {
-                    return (
-                      <Avatar
-                        key={avatar.name}
-                        name={avatar.name}
-                        src={avatar.src}
-                      />
-                      // avatar.name = ステータスID
-                    );
+                  {avatar.map((ava) => {
+                    return <Avatar key={ava[0]} name={ava[2]} src={ava[1]} />;
                   })}
                 </AvatarGroup>
               </VStack>
