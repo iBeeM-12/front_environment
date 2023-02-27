@@ -4,6 +4,8 @@ import { Group } from "./components/Group";
 import { CreateGroup } from "./components/CreateGroup";
 import { Profile } from "./components/Profile";
 import { Post } from "./components/Post";
+import { Components } from "./components/pages/Components";
+
 export const App = () => {
   return (
     <>
@@ -14,6 +16,9 @@ export const App = () => {
           <Route path="/group/create" element={<CreateGroup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/posts/:id" element={<Post />} />
+
+          {/* コンポーネント確認用ページ */}
+          <Route path="/components" element={<Components />} />
         </Routes>
       </BrowserRouter>
     </>
