@@ -1,6 +1,5 @@
 import { Box, VStack } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
-import { GroupInfo0 } from "../data/dummyData";
 import { HStack, Text } from "@chakra-ui/react";
 import { ReturnButton } from "./ReturnButton";
 import { RemakeButton } from "./RemakeBottun";
@@ -28,6 +27,7 @@ export const GroupTop = ({ id }: Props) => {
         setGrpid(res.data[0]);
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.error(error);
       });
   }, [id]);
