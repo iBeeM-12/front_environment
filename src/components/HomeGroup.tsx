@@ -67,33 +67,31 @@ export const HomeGroup = () => {
       {groupList && // 初期値を渡していないため undefined を回避する必要がある
         groupList.map((group) => {
           return (
-            <>
-              <HStack spacing={10}>
-                <Stack key={group.id}>
-                  <Image
-                    src={group.img}
-                    onClick={() => {
-                      navigate(`/group/${group.id}`);
-                    }}
-                  />
-                </Stack>
-                <VStack spacing={4}>
-                  <Text fontSize="xl">{group.name}</Text>
-                  <AvatarGroup size="md" max={3}>
-                    {group.memberList.map((member) => {
-                      return (
-                        <Avatar
-                          key={member[0]}
-                          name={member[2]}
-                          src={member[1]}
-                        />
-                      );
-                    })}
-                  </AvatarGroup>
-                </VStack>
-                <SecessionButton grpid={group.id} />
-              </HStack>
-            </>
+            <HStack spacing={10} key={group.id}>
+              <Stack>
+                <Image
+                  src={group.img}
+                  onClick={() => {
+                    navigate(`/group/${group.id}`);
+                  }}
+                />
+              </Stack>
+              <VStack spacing={4}>
+                <Text fontSize="xl">{group.name}</Text>
+                <AvatarGroup size="md" max={3}>
+                  {group.memberList.map((member) => {
+                    return (
+                      <Avatar
+                        key={member[0]}
+                        name={member[2]}
+                        src={member[1]}
+                      />
+                    );
+                  })}
+                </AvatarGroup>
+              </VStack>
+              <SecessionButton grpid={group.id} />
+            </HStack>
           );
         })}
     </>
