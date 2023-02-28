@@ -13,7 +13,7 @@ export const HomeGroup = () => {
     [0, "dummy", "dummy2"],
   ]);
 
-  const [avatar, setAvatar] = useState<[number, string, string][]>([
+  const [avatars, avatarList] = useState<[number, string, string][]>([
     [
       1,
       "Taro",
@@ -21,36 +21,24 @@ export const HomeGroup = () => {
     ],
   ]);
 
-  console.log(id);
   useEffect(() => {
     const url_id = "http://localhost:8000/home/users_group_list?user_id=1";
-    // const url_icon = "http://localhost:8000/home/user/icon/";
 
     axios
       .get(url_id)
       .then((res) => {
-        // 本当は型判定とかしたほうがよいが…
-        // 詳しくは zod とか調べてみるとよいかも！？
         setId(res.data);
+        const url_avatar = `http://localhost:8000/home/group_member?group_id=${res.data[0]}`;
+        axios
+          .get(url_avatar)
+          .then((res) => {
+            avatarList(res.data);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
       })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
-  useEffect(() => {
-    const url_avatar = "home/group_member?group_id={grpid[0]}";
-
-    // ここでのgroup_id=はそれぞれ変化する。どうするのか?
-
-    axios
-      .get(url_avatar)
-      .then((res) => {
-        setAvatar(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+      .catch((error) => {});
   }, []);
 
   const navigate = useNavigate();
@@ -75,8 +63,14 @@ export const HomeGroup = () => {
                   {/** お作法1: return の中で if 文のようなロジックを使用するときは {} で囲う */}
                   {/** お作法2: map を使うときは必ず return を書く */}
                   {/** (一応) お作法3: map を使うときは必ず key を与える (描画には問題ないけど、concole で警告が出る) */}
-                  {avatar.map((ava) => {
-                    return <Avatar key={ava[0]} name={ava[2]} src={ava[1]} />;
+                  {avatars.map((avatar) => {
+                    return (
+                      <Avatar
+                        key={avatar[0]}
+                        name={avatar[2]}
+                        src={avatar[1]}
+                      />
+                    );
                   })}
                 </AvatarGroup>
               </VStack>
