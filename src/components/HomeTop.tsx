@@ -28,7 +28,6 @@ export const HomeTop = () => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res.data);
         // 本当は型判定とかしたほうがよいが…
         // 詳しくは zod とか調べてみるとよいかも！？
         // response が2次元で返ってくる
@@ -39,6 +38,7 @@ export const HomeTop = () => {
         setName([res.data[0], res.data[1], res.data[2], res.data[3]]);
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.error(error);
       });
   }, []);

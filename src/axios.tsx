@@ -11,12 +11,14 @@ export const Axios = () => {
     axios
       .get(url)
       .then((res) => {
+        // eslint-disable-next-line no-console
         console.log(res.data);
         // 本当は型判定とかしたほうがよいが…
         // 詳しくは zod とか調べてみるとよいかも！？
         setName([res.data[0], res.data[1], res.data[2]]);
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.error(error);
       });
   }, []);
