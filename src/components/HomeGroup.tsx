@@ -25,13 +25,13 @@ export const HomeGroup = () => {
       const url_avatar = `http://localhost:8000/home/group_member?group_id=${data[i][0]}`;
       await axios
         .get(url_avatar)
-        .then((_res) => {
+        .then((res) => {
           const _: Group = {
             id: data[i][0],
             name: data[i][1],
             img: data[i][2],
             isUnread: data[i][3],
-            memberList: _res.data,
+            memberList: res.data,
           };
           stash.push(_);
         })
@@ -42,21 +42,24 @@ export const HomeGroup = () => {
     }
     return stash;
   };
+
   useEffect(() => {
     const url_id = "http://localhost:8000/home/users_group_list?user_id=1";
-
     axios
       .get(url_id)
       .then((res) => {
         const data = res.data;
+        // resArr が配列であることを保証しなと map が使えない
         if (Array.isArray(data)) {
-          // resArr が配列であることを保証
           FetchMemberList(data).then((resolve) => {
             setGroupList(resolve);
           });
         }
       })
-      .catch((error) => {});
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error(err);
+      });
   }, []);
 
   return (
