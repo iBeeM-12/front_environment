@@ -8,18 +8,34 @@ import { SecessionButton } from "./SecessionBottun";
 
 //ホーム画面のグループの状態一覧
 export const HomeGroup = () => {
+  const navigate = useNavigate();
   //二個目の要素が今回numberになってしまっているため対応
   const [id, setId] = useState<[number, string | number, string][]>([
     [0, "dummy", "dummy2"],
   ]);
+  const [avatars, setAvatars] = useState<[number, string][][]>();
 
-  const [avatars, avatarList] = useState<[number, string, string][]>([
-    [
-      1,
-      "Taro",
-      "https://cdn.discordapp.com/attachments/1038862997998817350/1051063658718957598/study_neko.PNG",
-    ],
-  ]);
+  const RequestMemberList = (stash: any[], arr: any[]) => {
+    for (let i = 0; i < arr.length; i++) {
+      const url_avatar = `http://localhost:8000/home/group_member?group_id=${arr[i][0]}`;
+      axios
+        .get(url_avatar)
+        .then((_res) => {
+          // NOTE: API の設計にある name が返ってきてない
+          stash.push(_res.data);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  };
+
+  const FetchMemberList = async (arr: [number, string | number, string][]) => {
+    const stash: any[] = []; // FIXME: any を回避
+    await RequestMemberList(stash, arr);
+    console.log(stash);
+    return stash;
+  };
 
   useEffect(() => {
     const url_id = "http://localhost:8000/home/users_group_list?user_id=1";
@@ -27,26 +43,29 @@ export const HomeGroup = () => {
     axios
       .get(url_id)
       .then((res) => {
-        setId(res.data);
-        const url_avatar = `http://localhost:8000/home/group_member?group_id=${res.data[0]}`;
-        axios
-          .get(url_avatar)
-          .then((res) => {
-            avatarList(res.data);
-          })
-          .catch((err) => {
-            console.error(err);
+        if (Array.isArray(res.data)) {
+          // resArr が配列であることを保証
+          FetchMemberList(res.data).then((resolve) => {
+            console.log(resolve);
+            setAvatars(resolve);
           });
+        }
+        setId(res.data);
       })
       .catch((error) => {});
   }, []);
 
-  const navigate = useNavigate();
+  if (avatars) {
+    // console.log(avatars, avatars.length, avatars[0]);
+    console.log(avatars, avatars.length);
+  }
+
   return (
     <>
-      {id.map((grpid) => {
+      {avatars && <Avatar src={"https://bit.ly/dan-abramov"} />}
+      {/* {id.map((grpid, i) => {
         return (
-          <>
+          <div key={i}>
             <HStack spacing={10}>
               <Stack key={grpid[0]}>
                 <Image
@@ -60,25 +79,18 @@ export const HomeGroup = () => {
               <VStack spacing={4}>
                 <Text fontSize="xl">{grpid[1]}</Text>
                 <AvatarGroup size="md" max={3}>
-                  {/** お作法1: return の中で if 文のようなロジックを使用するときは {} で囲う */}
-                  {/** お作法2: map を使うときは必ず return を書く */}
-                  {/** (一応) お作法3: map を使うときは必ず key を与える (描画には問題ないけど、concole で警告が出る) */}
-                  {avatars.map((avatar) => {
-                    return (
-                      <Avatar
-                        key={avatar[0]}
-                        name={avatar[2]}
-                        src={avatar[1]}
-                      />
-                    );
-                  })}
+                  {avatars &&
+                    avatars[i] &&
+                    avatars[i].map((avatar) => {
+                      return <Avatar key={avatar[0]} src={avatar[1]} />;
+                    })}
                 </AvatarGroup>
               </VStack>
               <SecessionButton grpid={grpid[0]} />
             </HStack>
-          </>
+          </div>
         );
-      })}
+      })} */}
     </>
   );
 };
