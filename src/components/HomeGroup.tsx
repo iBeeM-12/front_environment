@@ -6,91 +6,93 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SecessionButton } from "./SecessionBottun";
 
+type Group = {
+  id: number;
+  name: string | number; // 本来は string が正しいはずだけども！？
+  img: string;
+  isUnread: number; // API 設計みた感じこの戻り値もありそう 0：既読, 1：未読
+  memberList: [number, string, string][];
+};
+
 //ホーム画面のグループの状態一覧
 export const HomeGroup = () => {
   const navigate = useNavigate();
-  //二個目の要素が今回numberになってしまっているため対応
-  const [id, setId] = useState<[number, string | number, string][]>([
-    [0, "dummy", "dummy2"],
-  ]);
-  const [avatars, setAvatars] = useState<[number, string][][]>();
+  const [groupList, setGroupList] = useState<Group[]>();
 
-  const RequestMemberList = (stash: any[], arr: any[]) => {
-    for (let i = 0; i < arr.length; i++) {
-      const url_avatar = `http://localhost:8000/home/group_member?group_id=${arr[i][0]}`;
-      axios
+  const FetchMemberList = async (data: any[]) => {
+    const stash: Group[] = [];
+    for (let i = 0; i < data.length; i++) {
+      const url_avatar = `http://localhost:8000/home/group_member?group_id=${data[i][0]}`;
+      await axios
         .get(url_avatar)
         .then((_res) => {
-          // NOTE: API の設計にある name が返ってきてない
-          stash.push(_res.data);
+          const _: Group = {
+            id: data[i][0],
+            name: data[i][1],
+            img: data[i][2],
+            isUnread: data[i][3],
+            memberList: _res.data,
+          };
+          stash.push(_);
         })
         .catch((err) => {
+          // eslint-disable-next-line no-console
           console.error(err);
         });
     }
-  };
-
-  const FetchMemberList = async (arr: [number, string | number, string][]) => {
-    const stash: any[] = []; // FIXME: any を回避
-    await RequestMemberList(stash, arr);
-    console.log(stash);
     return stash;
   };
-
   useEffect(() => {
     const url_id = "http://localhost:8000/home/users_group_list?user_id=1";
 
     axios
       .get(url_id)
       .then((res) => {
-        if (Array.isArray(res.data)) {
+        const data = res.data;
+        if (Array.isArray(data)) {
           // resArr が配列であることを保証
-          FetchMemberList(res.data).then((resolve) => {
-            console.log(resolve);
-            setAvatars(resolve);
+          FetchMemberList(data).then((resolve) => {
+            setGroupList(resolve);
           });
         }
-        setId(res.data);
       })
       .catch((error) => {});
   }, []);
 
-  if (avatars) {
-    // console.log(avatars, avatars.length, avatars[0]);
-    console.log(avatars, avatars.length);
-  }
-
   return (
     <>
-      {avatars && <Avatar src={"https://bit.ly/dan-abramov"} />}
-      {/* {id.map((grpid, i) => {
-        return (
-          <div key={i}>
-            <HStack spacing={10}>
-              <Stack key={grpid[0]}>
-                <Image
-                  src={grpid[2]}
-                  onClick={() => {
-                    navigate(`/group/${grpid[0]}`);
-                    //サムネと名前は受け渡したほうが楽かも
-                  }}
-                />
-              </Stack>
-              <VStack spacing={4}>
-                <Text fontSize="xl">{grpid[1]}</Text>
-                <AvatarGroup size="md" max={3}>
-                  {avatars &&
-                    avatars[i] &&
-                    avatars[i].map((avatar) => {
-                      return <Avatar key={avatar[0]} src={avatar[1]} />;
+      {groupList && // 初期値を渡していないため undefined を回避する必要がある
+        groupList.map((group) => {
+          return (
+            <>
+              <HStack spacing={10}>
+                <Stack key={group.id}>
+                  <Image
+                    src={group.img}
+                    onClick={() => {
+                      navigate(`/group/${group.id}`);
+                    }}
+                  />
+                </Stack>
+                <VStack spacing={4}>
+                  <Text fontSize="xl">{group.name}</Text>
+                  <AvatarGroup size="md" max={3}>
+                    {group.memberList.map((member) => {
+                      return (
+                        <Avatar
+                          key={member[0]}
+                          name={member[2]}
+                          src={member[1]}
+                        />
+                      );
                     })}
-                </AvatarGroup>
-              </VStack>
-              <SecessionButton grpid={grpid[0]} />
-            </HStack>
-          </div>
-        );
-      })} */}
+                  </AvatarGroup>
+                </VStack>
+                <SecessionButton grpid={group.id} />
+              </HStack>
+            </>
+          );
+        })}
     </>
   );
 };
