@@ -1,7 +1,7 @@
 import { Avatar, Button, Portal, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { MemberInfo0, MemberInfo1, MemberList } from "../data/dummyData";
+import { MemberList } from "../data/dummyData";
+
 import {
   Popover,
   PopoverTrigger,
@@ -20,7 +20,6 @@ export const MyAvatar = () => {
     "hogei",
     "hougei",
   ]);
-  const navigate = useNavigate();
   useEffect(() => {
     const url = "http://localhost:8000/home/user/get_user_info?user_id=1";
     // const url_icon = "http://localhost:8000/home/user/icon/";
