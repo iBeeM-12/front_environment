@@ -1,30 +1,35 @@
-import { Box, HStack } from "@chakra-ui/layout";
+import { Box, Center, Container, HStack } from "@chakra-ui/layout";
 import { ButtonOfCreateGroup } from "../ButtonOfCreateGroup";
 import { GroupIconSet } from "../GroupIconSet";
 import { InputGroupName } from "../InputGroupName";
+import { VSpacer } from "../molecules/Spacer";
 import { ReturnButton } from "../ReturnButton";
 import { UserIDSearch } from "../UserIDSearch";
 
 export const CreateGroup = () => {
   return (
     <>
-      <Box bg="#E5D1C8" minH="5000px">
-        <HStack>
-          <Box w="280px"></Box>
-          <ButtonOfCreateGroup />
-          <ReturnButton />
-        </HStack>
-        <Box w="350px">
+      <Container maxW="container.md">
+        <Box bg="#E5D1C8">
+          <Box display="flex" justifyContent="flex-end">
+            <HStack>
+              <ButtonOfCreateGroup />
+              <ReturnButton />
+            </HStack>
+          </Box>
+          <VSpacer size={12} />
+
           <InputGroupName />
-        </Box>
-        <HStack>
-          <Box w="100px"></Box>
-          <GroupIconSet />
-        </HStack>
-        <Box w="350px">
+          <VSpacer size={12} />
+          <Center>
+            <GroupIconSet />
+          </Center>
+          <VSpacer size={4} />
+
           <UserIDSearch />
+          <VSpacer size={60} />
         </Box>
-      </Box>
+      </Container>
     </>
   );
 };

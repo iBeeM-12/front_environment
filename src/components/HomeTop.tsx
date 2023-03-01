@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import { MemberInfo0 } from "../data/dummyData";
 import { HStack, Text, Center } from "@chakra-ui/react";
@@ -43,7 +43,7 @@ export const HomeTop = () => {
   return (
     <>
       {/* FIXME: スタイルをピクセルで指定しているためもう少しいい感じにする */}
-      <HStack bg="#F6C745" h={"150px"} spacing={10} key={MemberInfo0[1]}>
+      <HStack bg="#F6C745" key={MemberInfo0[1]}>
         <Box w={"240px"} h={"150px"}>
           <Image
             src={name[2]}
