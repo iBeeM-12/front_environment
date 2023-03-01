@@ -1,15 +1,15 @@
-import { Box, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Image, Text, VStack } from "@chakra-ui/react";
 import { GroupInfo0 } from "../data/dummyData";
 import React from "react";
 
 //グループアイコンの設定画面のテキストと画像枠
 export const GroupIconSet = () => {
   return (
-    <Stack spacing={3}>
+    <VStack>
       <Text fontSize="xl">グループアイコンを設定</Text>
       <Box w={"150px"} h={"150px"}>
         <Image src={GroupInfo0[0]} alt="name1" />
       </Box>
-    </Stack>
+    </VStack>
   );
 };

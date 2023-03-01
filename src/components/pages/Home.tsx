@@ -1,24 +1,28 @@
 import React from "react";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, Container, HStack } from "@chakra-ui/react";
 import { HomeTop } from "../HomeTop";
 import { HomeGroup } from "../HomeGroup";
 import { PlusButtonGroup } from "../PlusButton";
+import { VSpacer } from "../molecules/Spacer";
 
 //ホーム画面くみ上げ
 export const Home = () => {
   return (
     <>
-      <Box bg={"#F6C745"} minH="5000px">
-        <HomeTop />
-        <Box h="10px"></Box>
-        <HStack>
-          <Box w="2px"></Box>
-          <Box borderRadius="xl" w="370px" bg={"#E5D1C8"}>
-            <PlusButtonGroup text={"グループの追加"} />
-            <HomeGroup />
-          </Box>
-        </HStack>
-      </Box>
+      <Container maxW="container.md">
+        <Box bg={"#F6C745"}>
+          <HomeTop />
+          <VSpacer size={12} />
+
+          <HStack>
+            <Box borderRadius="xl" w="2000px" bg={"#E5D1C8"}>
+              <PlusButtonGroup text={"グループの追加"} />
+              <HomeGroup />
+            </Box>
+          </HStack>
+          <VSpacer size={60} />
+        </Box>
+      </Container>
     </>
   );
 };
