@@ -20,27 +20,49 @@ export const MyAvatar = () => {
     "hogei",
     "hougei",
   ]);
+
+  const [icons, setIcon] = useState<[number, string, string][]>();
+
+  const [nowstatus, setNowstatus] = useState<[number]>([0]);
+
   useEffect(() => {
     const url = "http://localhost:8000/home/user/get_user_info?user_id=1";
-    // const url_icon = "http://localhost:8000/home/user/icon/";
+    const url_icon = "http://localhost:8000/home/user/icon/";
+    // const url_update =
+    //   "http://localhost:8000/home/user/update_user_info?user_id=1,user_state_id=${nowstatus}";
 
     axios
       .get(url)
       .then((res) => {
-        // 本当は型判定とかしたほうがよいが…
-        // 詳しくは zod とか調べてみるとよいかも！？
-        // response が2次元で返ってくる
-        // const response: Temp[] = [
-        //   [10, "hoge!!!", 10],
-        //   [20, "foofoo", 20],
-        // ]; //res.data で取得を想定
-        setName([res.data[0], res.data[1], res.data[2], res.data[3]]);
+        console.log(res.data);
+        setName(res.data);
       })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error(error);
+      .catch((err) => {
+        console.error(err);
+      });
+    axios
+      .get(url_icon)
+      .then((res) => {
+        setIcon(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
       });
   }, []);
+
+  const handleClick = (id: number) => {
+    console.log(id);
+    const url_update = `http://localhost:8000/home/user/update_user_info?user_id=1,user_state_id=${id}`;
+    // const url = "http://localhost:8000/home/user/update_user_info?user_id=1,user_state_id=" + id
+    axios
+      .post(url_update)
+      .then((res) => {
+        // なんかする
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   return (
     <>
@@ -56,19 +78,26 @@ export const MyAvatar = () => {
             <PopoverHeader>今どんな気分？</PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-              {MemberList.map((member, i) => {
-                return (
-                  <VStack key={i}>
-                    <Button size="xl" rounded={"full"}>
-                      {/* 状態表示の画像にする */}
-                      <Avatar key={member.name} src={member.stat} />
-                      {/* keyの内容：ステータスの名前 crcの内容：ステータスの表示 */}
-                    </Button>
-                    {/* 状態の名前にする */}
-                    <p>{member.statename}</p>
-                  </VStack>
-                );
-              })}
+              {icons &&
+                icons.map((icon, i) => {
+                  return (
+                    <VStack key={i}>
+                      <Button
+                        size="xl"
+                        rounded={"full"}
+                        onClick={() => {
+                          handleClick(icon[0]);
+                        }}
+                      >
+                        {/* 状態表示の画像にする */}
+                        <Avatar key={icon[0]} src={icon[2]} />
+                        {/* keyの内容：ステータスの名前 crcの内容：ステータスの表示 */}
+                      </Button>
+                      {/* 状態の名前にする */}
+                      <p>{icon[1]}</p>
+                    </VStack>
+                  );
+                })}
             </PopoverBody>
           </PopoverContent>
         </Portal>
