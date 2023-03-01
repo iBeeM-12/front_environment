@@ -34,6 +34,7 @@ import { StampSelect } from "../StampSelect";
 import { UserIDSearch } from "../UserIDSearch";
 import { YourChat } from "../YourChat";
 import { PlusButton } from "../SearchIcon";
+import { Tab1, Tab2 } from "../Tab";
 
 export const Components = () => {
   return (
@@ -257,7 +258,10 @@ export const Components = () => {
           <Heading size="lg">Tab</Heading>
           <Card variant="filled">
             <CardBody>
-              <Tab />
+              #Tab1
+              <Tab1 />
+              #Tab2
+              <Tab2 />
             </CardBody>
           </Card>
 
