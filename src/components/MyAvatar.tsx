@@ -1,6 +1,5 @@
 import { Avatar, Button, Portal, VStack } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { MemberList } from "../data/dummyData";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import {
   Popover,
@@ -13,41 +12,48 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 
-export const MyAvatar = () => {
-  const [name, setName] = useState<[number, string, string, string]>([
-    0,
-    "hoge",
-    "hogei",
-    "hougei",
-  ]);
-  useEffect(() => {
-    const url = "http://localhost:8000/home/user/get_user_info?user_id=1";
-    // const url_icon = "http://localhost:8000/home/user/icon/";
+type Props = {
+  name: [number, string, string, string];
+  setName: Dispatch<SetStateAction<[number, string, string, string]>>;
+};
 
+export const MyAvatar = ({ name, setName }: Props) => {
+  const [icons, setIcon] = useState<[number, string, string][]>();
+  const [statusImg, setStatusImg] = useState<string>(name[3]);
+
+  useEffect(() => {
+    const url_icon = "http://localhost:8000/home/user/get_icon_list";
     axios
-      .get(url)
+      .get(url_icon)
       .then((res) => {
-        // 本当は型判定とかしたほうがよいが…
-        // 詳しくは zod とか調べてみるとよいかも！？
-        // response が2次元で返ってくる
-        // const response: Temp[] = [
-        //   [10, "hoge!!!", 10],
-        //   [20, "foofoo", 20],
-        // ]; //res.data で取得を想定
-        setName([res.data[0], res.data[1], res.data[2], res.data[3]]);
+        setIcon(res.data);
       })
-      .catch((error) => {
+      .catch((err) => {
         // eslint-disable-next-line no-console
-        console.error(error);
+        console.error(err);
       });
   }, []);
+
+  const handleClick = (id: number, img: string) => {
+    const url_update = `http://localhost:8000/home/user/get_user_detail?user_id=1&user_state_id=${id}`;
+    axios
+      .get(url_update)
+      .then((res) => {
+        // アイコンの画像が変わるレンダーが走る必要がありそう
+        setStatusImg(img);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error(err);
+      });
+  };
 
   return (
     <>
       <Popover key={name[0]}>
         <PopoverTrigger>
           <Button size="xl" rounded={"full"}>
-            <Avatar src={name[3]}></Avatar>
+            <Avatar src={statusImg}></Avatar>
           </Button>
         </PopoverTrigger>
         <Portal>
@@ -56,19 +62,26 @@ export const MyAvatar = () => {
             <PopoverHeader>今どんな気分？</PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-              {MemberList.map((member, i) => {
-                return (
-                  <VStack key={i}>
-                    <Button size="xl" rounded={"full"}>
-                      {/* 状態表示の画像にする */}
-                      <Avatar key={member.name} src={member.stat} />
-                      {/* keyの内容：ステータスの名前 crcの内容：ステータスの表示 */}
-                    </Button>
-                    {/* 状態の名前にする */}
-                    <p>{member.statename}</p>
-                  </VStack>
-                );
-              })}
+              {icons &&
+                icons.map((icon, i) => {
+                  return (
+                    <VStack key={i}>
+                      <Button
+                        size="xl"
+                        rounded={"full"}
+                        onClick={() => {
+                          handleClick(icon[0], icon[2]);
+                        }}
+                      >
+                        {/* 状態表示の画像にする */}
+                        <Avatar key={icon[0]} src={icon[2]} />
+                        {/* keyの内容：ステータスの名前 crcの内容：ステータスの表示 */}
+                      </Button>
+                      {/* 状態の名前にする */}
+                      <p>{icon[1]}</p>
+                    </VStack>
+                  );
+                })}
             </PopoverBody>
           </PopoverContent>
         </Portal>
