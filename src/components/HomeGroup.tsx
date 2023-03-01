@@ -44,22 +44,26 @@ export const HomeGroup = () => {
   };
 
   useEffect(() => {
-    const url_id = "http://localhost:8000/home/users_group_list?user_id=1";
-    axios
-      .get(url_id)
-      .then((res) => {
-        const data = res.data;
-        // resArr が配列であることを保証しなと map が使えない
-        if (Array.isArray(data)) {
-          FetchMemberList(data).then((resolve) => {
-            setGroupList(resolve);
-          });
-        }
-      })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.error(err);
-      });
+    // FIXME: グループの情報取得の API を謎に多く叩いてエラーを吐く瞬間があるため、それを一時的に回避
+    if (groupList === undefined) {
+      const url_id = "http://localhost:8000/home/users_group_list?user_id=1";
+      axios
+        .get(url_id)
+        .then((res) => {
+          const data = res.data;
+          // resArr が配列であることを保証しなと map が使えない
+          if (Array.isArray(data)) {
+            FetchMemberList(data).then((resolve) => {
+              setGroupList(resolve);
+            });
+          }
+        })
+        .catch((err) => {
+          // eslint-disable-next-line no-console
+          console.error(err);
+        });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

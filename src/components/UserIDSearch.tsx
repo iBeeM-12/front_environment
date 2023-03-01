@@ -1,7 +1,7 @@
 import { SearchIcon } from "@chakra-ui/icons";
 import { HStack, IconButton, Input } from "@chakra-ui/react";
 
-export const UserSearch = () => {
+export const UserIDSearch = () => {
   return (
     <>
       <HStack>

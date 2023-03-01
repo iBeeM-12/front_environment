@@ -1,9 +1,8 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from "@chakra-ui/react";
-import exp from "constants";
 import { Chat } from "./Chat";
 import { MemberView } from "./MemberView";
 import { PlusButtonMember } from "./PlusButton";
-import { Cannedver, Stampver } from "./StampSelect";
+import { Cannedver, StampSelect } from "./StampSelect";
 
 export const Tab1 = () => {
   return (
@@ -53,7 +52,7 @@ export const Tab2 = () => {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <Stampver />
+            <StampSelect />
           </TabPanel>
           <TabPanel>
             <Cannedver />
