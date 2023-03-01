@@ -6,7 +6,7 @@ import { CannedList, StampList } from "../data/dummyData";
 
 //欲しいもの スタンプ画像のＵＲＬ
 //出力するもの 選択されたスタンプに振られた番号
-export const Stampver = () => {
+export const StampSelect = () => {
   return (
     <>
       <Box w="390px" bg="C8C8C8" p={5}>

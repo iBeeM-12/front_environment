@@ -1,10 +1,10 @@
 import { Box, HStack, VStack } from "@chakra-ui/react";
 import React from "react";
-import { FreeText } from "../components/FreeText";
-import { HistoryIconText } from "../components/HistoryIconText";
-import { HomeTop } from "../components/HomeTop";
-import { ProfileRemakeButton } from "../components/RemakeBottun";
-import { ReturnButton } from "../components/ReturnButton";
+import { FreeText } from "../FreeText";
+import { HistoryIconText } from "../HistoryIconText";
+import { HomeTop } from "../HomeTop";
+import { ProfileRemakeButton } from "../RemakeBottun";
+import { ReturnButton } from "../ReturnButton";
 
 export const Profile = () => {
   return (
