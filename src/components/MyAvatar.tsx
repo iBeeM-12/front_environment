@@ -1,7 +1,7 @@
 import { Avatar, Button, Portal, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { MemberInfo0, MemberInfo1, MemberList } from "../data/dummyData";
+import { MemberList } from "../data/dummyData";
+
 import {
   Popover,
   PopoverTrigger,
@@ -20,7 +20,6 @@ export const MyAvatar = () => {
     "hogei",
     "hougei",
   ]);
-  const navigate = useNavigate();
   useEffect(() => {
     const url = "http://localhost:8000/home/user/get_user_info?user_id=1";
     // const url_icon = "http://localhost:8000/home/user/icon/";
@@ -28,7 +27,6 @@ export const MyAvatar = () => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res.data);
         // 本当は型判定とかしたほうがよいが…
         // 詳しくは zod とか調べてみるとよいかも！？
         // response が2次元で返ってくる
@@ -39,6 +37,7 @@ export const MyAvatar = () => {
         setName([res.data[0], res.data[1], res.data[2], res.data[3]]);
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.error(error);
       });
   }, []);
@@ -57,9 +56,9 @@ export const MyAvatar = () => {
             <PopoverHeader>今どんな気分？</PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-              {MemberList.map((member) => {
+              {MemberList.map((member, i) => {
                 return (
-                  <VStack>
+                  <VStack key={i}>
                     <Button size="xl" rounded={"full"}>
                       {/* 状態表示の画像にする */}
                       <Avatar key={member.name} src={member.stat} />
