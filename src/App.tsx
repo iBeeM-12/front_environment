@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./components/Home";
-import { Group } from "./components/Group";
-import { CreateGroup } from "./components/CreateGroup";
-import { Profile } from "./components/Profile";
-import { Post } from "./components/Post";
+import { Home } from "./page/Home";
+import { Group } from "./page/Group";
+import { CreateGroup } from "./page/CreateGroup";
+import { Profile } from "./page/Profile";
+import { Post } from "./page/Post";
 import { Components } from "./components/pages/Components";
 
 export const App = () => {
