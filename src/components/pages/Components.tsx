@@ -1,13 +1,6 @@
 import React from "react";
 
-import {
-  Card,
-  CardBody,
-  Container,
-  Heading,
-  Tab,
-  VStack,
-} from "@chakra-ui/react";
+import { Card, CardBody, Container, Heading, VStack } from "@chakra-ui/react";
 import { VSpacer } from "../molecules/Spacer";
 import { Chat } from "../Chat";
 import { ButtonOfCreateGroup } from "../ButtonOfCreateGroup";
@@ -37,6 +30,21 @@ import { PlusButton } from "../SearchIcon";
 import { Tab1, Tab2 } from "../Tab";
 
 export const Components = () => {
+  const memberList = [
+    {
+      memberId: 0,
+      memberImage: "image",
+      memberName: "KJ",
+      statusIcon: "2",
+    },
+    {
+      memberId: 1,
+      memberImage: "image2",
+      memberName: "KJ2",
+      statusIcon: "3",
+    },
+  ];
+
   return (
     <>
       <VStack>
@@ -114,7 +122,10 @@ export const Components = () => {
           <Heading size="lg">GroupTop</Heading>
           <Card variant="filled">
             <CardBody>
-              <GroupTop id={"####"} />
+              <GroupTop
+                groupName="こんちわー"
+                groupImage="https://media.discordapp.net/attachments/1038862997998817350/1080442085070602342/pubg.png"
+              />
             </CardBody>
           </Card>
 
@@ -168,7 +179,7 @@ export const Components = () => {
           <Heading size="lg">MemberView</Heading>
           <Card variant="filled">
             <CardBody>
-              <MemberView />
+              <MemberView memberList={memberList} />
             </CardBody>
           </Card>
 
@@ -259,7 +270,7 @@ export const Components = () => {
           <Card variant="filled">
             <CardBody>
               #Tab1
-              <Tab1 />
+              <Tab1 memberList={memberList} />
               #Tab2
               <Tab2 />
             </CardBody>

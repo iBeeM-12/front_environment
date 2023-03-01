@@ -4,7 +4,16 @@ import { MemberView } from "./MemberView";
 import { PlusButtonMember } from "./PlusButton";
 import { Cannedver, StampSelect } from "./StampSelect";
 
-export const Tab1 = () => {
+type Props = {
+  memberList: {
+    memberId: number;
+    memberImage: string;
+    memberName: string;
+    statusIcon: string;
+  }[];
+};
+
+export const Tab1 = ({ memberList }: Props) => {
   return (
     <>
       <Tabs variant="enclosed">
@@ -28,7 +37,7 @@ export const Tab1 = () => {
           <TabPanel p="0px">
             <Box bg={"#E5D1C8"}>
               <PlusButtonMember text={"メンバーの追加"} />
-              <MemberView />
+              <MemberView memberList={memberList} />
             </Box>
           </TabPanel>
           <TabPanel p="0px">
