@@ -1,6 +1,6 @@
-import { GroupTop } from "../components/GroupTop";
+import { GroupTop } from "../GroupTop";
 import { Box, VStack } from "@chakra-ui/react";
-import { Tab1 } from "../components/Tab";
+import { Tab1 } from "../Tab";
 import { useParams } from "react-router-dom";
 //グループ画面の枠
 

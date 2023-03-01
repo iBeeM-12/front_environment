@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, HStack } from "@chakra-ui/react";
-import { HomeTop } from "../components/HomeTop";
-import { HomeGroup } from "../components/HomeGroup";
-import { PlusButtonGroup } from "../components/PlusButton";
+import { HomeTop } from "../HomeTop";
+import { HomeGroup } from "../HomeGroup";
+import { PlusButtonGroup } from "../PlusButton";
 
 //ホーム画面くみ上げ
 export const Home = () => {

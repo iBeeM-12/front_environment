@@ -1,9 +1,9 @@
 import { Box, HStack } from "@chakra-ui/layout";
-import { ButtonOfCreateGroup } from "../components/ButtonOfCreateGroup";
-import { GroupIconSet } from "../components/GroupIconSet";
-import { InputGroupName } from "../components/InputGroupName";
-import { ReturnButton } from "../components/ReturnButton";
-import { UserSearch } from "../components/UserIDSearch";
+import { ButtonOfCreateGroup } from "../ButtonOfCreateGroup";
+import { GroupIconSet } from "../GroupIconSet";
+import { InputGroupName } from "../InputGroupName";
+import { ReturnButton } from "../ReturnButton";
+import { UserIDSearch } from "../UserIDSearch";
 
 export const CreateGroup = () => {
   return (
@@ -22,7 +22,7 @@ export const CreateGroup = () => {
           <GroupIconSet />
         </HStack>
         <Box w="350px">
-          <UserSearch />
+          <UserIDSearch />
         </Box>
       </Box>
     </>
