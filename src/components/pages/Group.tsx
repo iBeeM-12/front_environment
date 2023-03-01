@@ -1,5 +1,5 @@
 import { GroupTop } from "../GroupTop";
-import { Box, VStack } from "@chakra-ui/react";
+import { Box, Container, VStack } from "@chakra-ui/react";
 import { Tab1 } from "../Tab";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -47,13 +47,15 @@ export const Group = () => {
 
   return (
     <>
-      <VStack bg="#F6C745" spacing={1}>
-        {groupName && groupImage && (
-          <GroupTop groupName={groupName} groupImage={groupImage} />
-        )}
-        <Box h={"10px"}></Box>
-        {memberList && <Tab1 memberList={memberList} />}
-      </VStack>
+      <Container maxW="container.md">
+        <VStack bg="#F6C745" spacing={1}>
+          {groupName && groupImage && (
+            <GroupTop groupName={groupName} groupImage={groupImage} />
+          )}
+          <Box h={"10px"}></Box>
+          {memberList && <Tab1 memberList={memberList} />}
+        </VStack>
+      </Container>
     </>
   );
 };

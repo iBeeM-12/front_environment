@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Card, CardBody, Container, Heading, VStack } from "@chakra-ui/react";
 import { VSpacer } from "../molecules/Spacer";
@@ -45,6 +45,12 @@ export const Components = () => {
     },
   ];
 
+  const [name, setName] = useState<[number, string, string, string]>([
+    0,
+    "a",
+    "aa",
+    "aaa",
+  ]);
   return (
     <>
       <VStack>
@@ -188,7 +194,7 @@ export const Components = () => {
           <Heading size="lg">MyAvatar</Heading>
           <Card variant="filled">
             <CardBody>
-              <MyAvatar />
+              <MyAvatar name={name} setName={setName} />
             </CardBody>
           </Card>
 
