@@ -20,6 +20,7 @@ export const Profile = () => {
           </Box>
           <VSpacer size={8} />
           <HomeTop />
+          <VSpacer size={16} />
           <VStack spacing={"3"}>
             <FreeText />
             <Box bg="#FFFFFF" w="370px" borderRadius="md">
