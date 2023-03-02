@@ -19,7 +19,7 @@ export const HistoryIconText = () => {
       .catch((err) => {
         console.error(err);
       });
-  });
+  }, []);
 
   return (
     <>
