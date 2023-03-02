@@ -9,10 +9,10 @@ import axios from "axios";
 //グループ画面
 type Props = { id: string };
 export const GroupTop = ({ id }: Props) => {
-  const [grpid, setGrpid] = useState<[number, string | number, string]>([
+  const [grpid, setGrpid] = useState<[number, string, string]>([
     0,
-    "dummy",
-    "dummy2",
+    "groupname",
+    "url",
   ]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export const GroupTop = ({ id }: Props) => {
       .then((res) => {
         // 本当は型判定とかしたほうがよいが…
         // 詳しくは zod とか調べてみるとよいかも！？
-        setGrpid(res.data[0]);
+        setGrpid(res.data);
       })
       .catch((error) => {
         // eslint-disable-next-line no-console

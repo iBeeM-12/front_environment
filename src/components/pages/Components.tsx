@@ -37,12 +37,7 @@ import { PlusButton } from "../SearchIcon";
 import { Tab1, Tab2 } from "../Tab";
 
 export const Components = () => {
-  const [name, setName] = useState<[number, string, string, string]>([
-    0,
-    "a",
-    "aa",
-    "aaa",
-  ]);
+  const [name, setName] = useState<[number, string, string, string]>();
   return (
     <>
       <VStack>
@@ -183,7 +178,7 @@ export const Components = () => {
           <Heading size="lg">MyAvatar</Heading>
           <Card variant="filled">
             <CardBody>
-              <MyAvatar name={name} setName={setName} />
+              {name && <MyAvatar name={name} setName={setName} />}
             </CardBody>
           </Card>
 

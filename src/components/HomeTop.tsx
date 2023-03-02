@@ -14,12 +14,7 @@ import axios from "axios";
 // type Temp = [number, string, number];
 
 export const HomeTop = () => {
-  const [name, setName] = useState<[number, string, string, string]>([
-    0,
-    "hoge",
-    "hogei",
-    "hougei",
-  ]);
+  const [name, setName] = useState<[number, string, string, string]>();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,7 +25,7 @@ export const HomeTop = () => {
       axios
         .get(url)
         .then((res) => {
-          setName([res.data[0], res.data[1], res.data[2], res.data[3]]);
+          setName(res.data);
         })
         .catch((error) => {
           // eslint-disable-next-line no-console
@@ -43,25 +38,27 @@ export const HomeTop = () => {
   return (
     <>
       {/* FIXME: スタイルをピクセルで指定しているためもう少しいい感じにする */}
-      <HStack bg="#F6C745" key={MemberInfo0[1]}>
-        <Box w={"240px"} h={"150px"}>
-          <Image
-            src={name[2]}
-            maxH={"150px"}
-            alt="name1"
-            onClick={() => {
-              navigate("/profile");
-            }}
-          />
-        </Box>
+      {name && (
+        <HStack bg="#F6C745" key={MemberInfo0[1]}>
+          <Box w={"240px"} h={"150px"}>
+            <Image
+              src={name[2]}
+              maxH={"150px"}
+              alt="name1"
+              onClick={() => {
+                navigate("/profile");
+              }}
+            />
+          </Box>
 
-        <Box>
-          <Text fontSize="3xl">{name[1]}</Text>
-          <Center>
-            <MyAvatar name={name} setName={setName} />
-          </Center>
-        </Box>
-      </HStack>
+          <Box>
+            <Text fontSize="3xl">{name[1]}</Text>
+            <Center>
+              <MyAvatar name={name} setName={setName} />
+            </Center>
+          </Box>
+        </HStack>
+      )}
     </>
   );
 };
