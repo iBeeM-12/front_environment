@@ -1,4 +1,4 @@
-import { Button, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import { Button, Input, InputGroup } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -54,16 +54,13 @@ export const FreeText = () => {
           placeholder={`${text?.userProfile}`}
           bg="#FFFFFF"
           size="sm"
-          w="370px"
           borderRadius="md"
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />
-        <InputRightElement>
-          <Button size="sm" onClick={handleClick}>
-            {"送信"}
-          </Button>
-        </InputRightElement>
+        <Button size="sm" onClick={handleClick}>
+          {"送信"}
+        </Button>
       </InputGroup>
     </>
   );
