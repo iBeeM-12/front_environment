@@ -28,8 +28,8 @@ export const HomeGroup = () => {
         .then((res) => {
           const _: Group = {
             id: data[i][0],
-            name: data[i][1],
-            img: data[i][2],
+            img: data[i][1],
+            name: data[i][2],
             isUnread: data[i][3],
             memberList: res.data,
           };
@@ -75,6 +75,7 @@ export const HomeGroup = () => {
               <Stack>
                 <Image
                   src={group.img}
+                  boxSize="96px"
                   onClick={() => {
                     navigate(`/group/${group.id}`);
                   }}

@@ -14,7 +14,9 @@ import axios from "axios";
 
 type Props = {
   name: [number, string, string, string];
-  setName: Dispatch<SetStateAction<[number, string, string, string]>>;
+  setName: Dispatch<
+    SetStateAction<[number, string, string, string] | undefined>
+  >;
 };
 
 export const MyAvatar = ({ name, setName }: Props) => {
