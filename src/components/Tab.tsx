@@ -5,12 +5,7 @@ import { PlusButtonMember } from "./PlusButton";
 import { Cannedver, StampSelect } from "./StampSelect";
 
 type Props = {
-  memberList: {
-    memberId: number;
-    memberImage: string;
-    memberName: string;
-    statusIcon: string;
-  }[];
+  memberList: [number, string, string, string][];
 };
 
 export const Tab1 = ({ memberList }: Props) => {

@@ -10,14 +10,8 @@ export const Group = () => {
   const { id } = useParams();
   const [groupName, setGroupName] = useState<string>("");
   const [groupImage, setGroupImage] = useState<string>("");
-  const [memberList, setMemberList] = useState<
-    {
-      memberId: number;
-      memberImage: string;
-      memberName: string;
-      statusIcon: string;
-    }[]
-  >();
+  const [memberList, setMemberList] =
+    useState<[number, string, string, string][]>();
 
   useEffect(() => {
     const url = `http://localhost:8000/home/group/detail?group_id=${id}`;

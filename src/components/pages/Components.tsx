@@ -30,19 +30,9 @@ import { PlusButton } from "../SearchIcon";
 import { Tab1, Tab2 } from "../Tab";
 
 export const Components = () => {
-  const memberList = [
-    {
-      memberId: 0,
-      memberImage: "image",
-      memberName: "KJ",
-      statusIcon: "2",
-    },
-    {
-      memberId: 1,
-      memberImage: "image2",
-      memberName: "KJ2",
-      statusIcon: "3",
-    },
+  const memberList: [number, string, string, string][] = [
+    [0, "image", "KJ", "2"],
+    [1, "image2", "KJ2", "3"],
   ];
 
   const [name, setName] = useState<[number, string, string, string]>([
