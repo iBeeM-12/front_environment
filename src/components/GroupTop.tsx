@@ -5,6 +5,7 @@ import { ReturnButton } from "./ReturnButton";
 import { RemakeButton } from "./RemakeBottun";
 
 //グループ画面
+
 type Props = {
   groupName: string;
   groupImage: string;

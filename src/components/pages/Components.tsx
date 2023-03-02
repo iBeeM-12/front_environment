@@ -41,6 +41,7 @@ export const Components = () => {
     "aa",
     "aaa",
   ]);
+
   return (
     <>
       <VStack>
@@ -176,15 +177,6 @@ export const Components = () => {
           <Card variant="filled">
             <CardBody>
               <MemberView memberList={memberList} />
-            </CardBody>
-          </Card>
-
-          {/* MyAvatar */}
-          <VSpacer size={8} />
-          <Heading size="lg">MyAvatar</Heading>
-          <Card variant="filled">
-            <CardBody>
-              <MyAvatar name={name} setName={setName} />
             </CardBody>
           </Card>
 
