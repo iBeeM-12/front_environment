@@ -2,14 +2,19 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from "@chakra-ui/react";
 import { Cannedver } from "./Cannedver";
 import { Chat } from "./Chat";
 import { MemberView } from "./MemberView";
+import { AddMamber } from "./pages/AddMember";
 import { PlusButtonMember } from "./PlusButton";
 import { StampSelect } from "./StampSelect";
 
 type Props = {
   memberList: [number, string, string, string][];
+  isAddMember: boolean;
+  setIsAddMember: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export const Tab1 = ({ memberList }: Props) => {
+export const Tab1 = ({ memberList, isAddMember, setIsAddMember }: Props) => {
+  // 変数名要検討, この flag で描画する内容を変える
+
   return (
     <>
       <Tabs variant="enclosed">
@@ -32,8 +37,19 @@ export const Tab1 = ({ memberList }: Props) => {
         <TabPanels>
           <TabPanel>
             <Box bg={"#E5D1C8"}>
-              <PlusButtonMember text={"メンバーの追加"} />
-              <MemberView memberList={memberList} />
+              {isAddMember ? (
+                <>
+                  <AddMamber setIsAddMember={setIsAddMember} />
+                </>
+              ) : (
+                <>
+                  <PlusButtonMember
+                    text={"メンバーの追加"}
+                    setState={setIsAddMember}
+                  />
+                  <MemberView memberList={memberList} />
+                </>
+              )}
             </Box>
           </TabPanel>
           <TabPanel>

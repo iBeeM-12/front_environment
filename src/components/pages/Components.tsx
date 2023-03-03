@@ -27,12 +27,15 @@ import { PlusButton } from "../SearchIcon";
 import { Tab1, Tab2 } from "../Tab";
 import { Cannedver } from "../Cannedver";
 import { MakeGroupNI } from "../MakeGroupNameImage";
+import { useState } from "react";
 
 export const Components = () => {
   const memberList: [number, string, string, string][] = [
     [0, "image", "KJ", "2"],
     [1, "image2", "KJ2", "3"],
   ];
+
+  const [isTemp, setIsTemp] = useState<boolean>(false);
 
   return (
     <>
@@ -259,7 +262,11 @@ export const Components = () => {
           <Card variant="filled">
             <CardBody>
               #Tab1
-              <Tab1 memberList={memberList} />
+              <Tab1
+                memberList={memberList}
+                isAddMember={isTemp}
+                setIsAddMember={setIsTemp}
+              />
               #Tab2
               <Tab2 />
             </CardBody>

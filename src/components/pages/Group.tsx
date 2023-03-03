@@ -1,5 +1,5 @@
 import { GroupTop } from "../GroupTop";
-import { Box, Container, VStack } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { Tab1 } from "../Tab";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -13,6 +13,8 @@ export const Group = () => {
   const [groupImage, setGroupImage] = useState<string>("");
   const [memberList, setMemberList] =
     useState<[number, string, string, string][]>();
+
+  const [isAddMember, setIsAddMember] = useState<boolean>(false);
 
   useEffect(() => {
     const url = `http://localhost:8000/home/group/detail?group_id=${id}`;
@@ -38,7 +40,7 @@ export const Group = () => {
         // eslint-disable-next-line no-console
         console.error(err);
       });
-  });
+  }, [isAddMember]);
 
   return (
     <>
@@ -48,7 +50,13 @@ export const Group = () => {
             <GroupTop groupName={groupName} groupImage={groupImage} />
           )}
           <VSpacer size={12} />
-          {memberList && <Tab1 memberList={memberList} />}
+          {memberList && (
+            <Tab1
+              memberList={memberList}
+              isAddMember={isAddMember}
+              setIsAddMember={setIsAddMember}
+            />
+          )}
         </Box>
       </Container>
     </>

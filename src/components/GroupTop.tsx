@@ -1,4 +1,4 @@
-import { Box, Center, VStack } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import { HStack, Text } from "@chakra-ui/react";
 import { ReturnButton } from "./ReturnButton";
