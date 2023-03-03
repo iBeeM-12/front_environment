@@ -1,5 +1,6 @@
 //チャット用画面
-import { Box, Button, VStack } from "@chakra-ui/react";
+
+import { Box, VStack } from "@chakra-ui/react";
 import { ChatTab } from "./ChatTab";
 import { useEffect, useState } from "react";
 import axios from "axios";

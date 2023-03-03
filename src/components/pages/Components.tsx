@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import { Card, CardBody, Container, Heading, VStack } from "@chakra-ui/react";
 import { VSpacer } from "../molecules/Spacer";
 import { Chat } from "../Chat";
@@ -27,6 +25,9 @@ import { UserIDSearch } from "../UserIDSearch";
 import { YourChat } from "../YourChat";
 import { PlusButton } from "../SearchIcon";
 import { Tab1 } from "../Tab";
+import { Cannedver } from "../Cannedver";
+import { MakeGroupNI } from "../MakeGroupNameImage";
+import { useState } from "react";
 import { ExceptMyselfChat } from "../ExceptMyselfChat";
 
 export const Components = () => {
@@ -39,12 +40,7 @@ export const Components = () => {
     "https://www.catcafemeow.com/wp/wp-content/uploads/2021/11/%E3%81%B2%E3%81%8B%E3%82%8B%E3%81%8F%E3%82%93_%E7%94%B7%E3%81%AE%E5%AD%90-2048x2048.jpeg",
     "例外太郎",
   ];
-  const [name, setName] = useState<[number, string, string, string]>([
-    0,
-    "a",
-    "aa",
-    "aaa",
-  ]);
+  const [isTemp, setIsTemp] = useState<boolean>(false);
   const stampList: [number, string][] = [
     [
       1,
@@ -79,6 +75,15 @@ export const Components = () => {
           <Card variant="filled">
             <CardBody>
               <ButtonOfCreateGroup />
+            </CardBody>
+          </Card>
+
+          {/* Cannedver */}
+          <VSpacer size={8} />
+          <Heading size="lg">Cannedver</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <Cannedver />
             </CardBody>
           </Card>
 
@@ -318,6 +323,24 @@ export const Components = () => {
                 text={"aaa"}
                 stamp={"bbb"}
               />
+            </CardBody>
+          </Card>
+
+          {/* MakeGroupNI (InputGroupNameとGroupIconSetを一つにしたやつです。)*/}
+          <VSpacer size={8} />
+          <Heading size="lg">MakeGroupNameImage</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <MakeGroupNI />
+            </CardBody>
+          </Card>
+
+          {/* MakeGroupNI (InputGroupNameとGroupIconSetを一つにしたやつです。)*/}
+          <VSpacer size={8} />
+          <Heading size="lg">MakeGroupNameImage</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <MakeGroupNI />
             </CardBody>
           </Card>
 

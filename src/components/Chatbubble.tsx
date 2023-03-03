@@ -9,6 +9,7 @@ type Props = {
 };
 
 export const ChatBubble = ({ text, stamp }: Props) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [flag, setFlag] = useState<string>(stamp);
   return (
     <>

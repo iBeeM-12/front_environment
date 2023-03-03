@@ -1,9 +1,10 @@
 import { GroupTop } from "../GroupTop";
-import { Box, Container, VStack } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { Tab1 } from "../Tab";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { VSpacer } from "../molecules/Spacer";
 //グループ画面の枠
 
 export const Group = () => {
@@ -12,6 +13,8 @@ export const Group = () => {
   const [groupImage, setGroupImage] = useState<string>("");
   const [memberList, setMemberList] =
     useState<[number, string, string, string][]>();
+
+  const [isAddMember, setIsAddMember] = useState<boolean>(false);
 
   useEffect(() => {
     const url = `http://localhost:8000/home/group/detail?group_id=${id}`;
@@ -37,18 +40,24 @@ export const Group = () => {
         // eslint-disable-next-line no-console
         console.error(err);
       });
-  });
+  }, [isAddMember]);
 
   return (
     <>
       <Container maxW="container.md">
-        <VStack bg="#F6C745" spacing={1}>
+        <Box bg="#F6C745">
           {groupName && groupImage && (
             <GroupTop groupName={groupName} groupImage={groupImage} />
           )}
-          <Box h={"10px"}></Box>
-          {memberList && <Tab1 memberList={memberList} />}
-        </VStack>
+          <VSpacer size={12} />
+          {memberList && (
+            <Tab1
+              memberList={memberList}
+              isAddMember={isAddMember}
+              setIsAddMember={setIsAddMember}
+            />
+          )}
+        </Box>
       </Container>
     </>
   );

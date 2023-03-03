@@ -8,7 +8,7 @@ export const ChatLeftIcon = () => {
     <>
       <Image
         borderRadius="full"
-        boxSize="50px"
+        boxSize={20}
         //喋った人の画像
         src={MemberInfo0[0]}
         //喋った人の名前(これがキーになるイメージ)

@@ -15,7 +15,7 @@ export const Home = () => {
           <VSpacer size={12} />
 
           <HStack>
-            <Box borderRadius="xl" w="2000px" bg={"#E5D1C8"}>
+            <Box borderRadius="xl" minW="100%" bg={"#E5D1C8"}>
               <PlusButtonGroup text={"グループの追加"} />
               <HomeGroup />
             </Box>
