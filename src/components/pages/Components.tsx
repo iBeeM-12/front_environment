@@ -4,7 +4,7 @@ import { Card, CardBody, Container, Heading, VStack } from "@chakra-ui/react";
 import { VSpacer } from "../molecules/Spacer";
 import { Chat } from "../Chat";
 import { ButtonOfCreateGroup } from "../ButtonOfCreateGroup";
-import { Chatbubble } from "../Chatbubble";
+import { ChatBubble } from "../Chatbubble";
 import { ChatLeftIcon } from "../ChatLeftIcon";
 import { Chatname } from "../Chatname";
 import { FreeText } from "../FreeText";
@@ -16,7 +16,6 @@ import { HomeTop } from "../HomeTop";
 import { InputGroupName } from "../InputGroupName";
 import { MakeNewGroup } from "../MakeNewGroup";
 import { MemberView } from "../MemberView";
-import { MyAvatar } from "../MyAvatar";
 import { MyChat } from "../MyChat";
 import { ReadOrNot } from "../ReadOrNot";
 import { RemakeButton } from "../RemakeBottun";
@@ -27,20 +26,43 @@ import { StampSelect } from "../StampSelect";
 import { UserIDSearch } from "../UserIDSearch";
 import { YourChat } from "../YourChat";
 import { PlusButton } from "../SearchIcon";
-import { Tab1, Tab2 } from "../Tab";
+import { Tab1 } from "../Tab";
+import { ExceptMyselfChat } from "../ExceptMyselfChat";
 
 export const Components = () => {
   const memberList: [number, string, string, string][] = [
     [0, "image", "KJ", "2"],
     [1, "image2", "KJ2", "3"],
   ];
-
+  const GroupInfo0: [number, string, string] = [
+    1,
+    "https://www.catcafemeow.com/wp/wp-content/uploads/2021/11/%E3%81%B2%E3%81%8B%E3%82%8B%E3%81%8F%E3%82%93_%E7%94%B7%E3%81%AE%E5%AD%90-2048x2048.jpeg",
+    "例外太郎",
+  ];
   const [name, setName] = useState<[number, string, string, string]>([
     0,
     "a",
     "aa",
     "aaa",
   ]);
+  const stampList: [number, string][] = [
+    [
+      1,
+      "https://cdn.discordapp.com/attachments/1038862997998817350/1051063653916495882/talk_neko.PNG",
+    ],
+    [
+      2,
+      "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654235246632/walk_neko.PNG",
+    ],
+    [
+      3,
+      "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654549827634/want_to_join_neko.PNG",
+    ],
+    [
+      4,
+      "https://cdn.discordapp.com/attachments/1038862997998817350/1051063654864408586/eat_neko.PNG",
+    ],
+  ];
 
   return (
     <>
@@ -74,7 +96,7 @@ export const Components = () => {
           <Heading size="lg">Chatbubble</Heading>
           <Card variant="filled">
             <CardBody>
-              <Chatbubble />
+              <ChatBubble text={"aaaa"} stamp={"0"} />
             </CardBody>
           </Card>
 
@@ -84,6 +106,19 @@ export const Components = () => {
           <Card variant="filled">
             <CardBody>
               <ChatLeftIcon />
+            </CardBody>
+          </Card>
+
+          {/* ExceptMyselfChat */}
+          <VSpacer size={8} />
+          <Heading size="lg">ExceptMyselfChat</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <ExceptMyselfChat
+                id={GroupInfo0[0]}
+                icon={GroupInfo0[1]}
+                name={GroupInfo0[2]}
+              />
             </CardBody>
           </Card>
 
@@ -185,7 +220,7 @@ export const Components = () => {
           <Heading size="lg">MyChat</Heading>
           <Card variant="filled">
             <CardBody>
-              <MyChat />
+              <MyChat text={"aaa"} stamp={"aaa"} />
             </CardBody>
           </Card>
 
@@ -248,7 +283,7 @@ export const Components = () => {
           <Heading size="lg">StampSelect</Heading>
           <Card variant="filled">
             <CardBody>
-              <StampSelect />
+              <StampSelect stampList={stampList} groupId={2} userId={1} />
             </CardBody>
           </Card>
 
@@ -259,8 +294,6 @@ export const Components = () => {
             <CardBody>
               #Tab1
               <Tab1 memberList={memberList} />
-              #Tab2
-              <Tab2 />
             </CardBody>
           </Card>
 
@@ -278,7 +311,13 @@ export const Components = () => {
           <Heading size="lg">YourChat</Heading>
           <Card variant="filled">
             <CardBody>
-              <YourChat />
+              <YourChat
+                id={GroupInfo0[0]}
+                icon={GroupInfo0[1]}
+                name={GroupInfo0[2]}
+                text={"aaa"}
+                stamp={"bbb"}
+              />
             </CardBody>
           </Card>
 
