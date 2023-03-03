@@ -10,7 +10,7 @@ export const ExceptMyselfChat = ({ id, icon, name }: Props) => {
   return (
     <>
       <VStack>
-        <Image borderRadius="full" boxSize="75px" src={icon} key={id} />
+        <Image borderRadius="full" boxSize="125px" src={icon} key={id} />
         <Text fontSize="24">{name}</Text>
       </VStack>
     </>
