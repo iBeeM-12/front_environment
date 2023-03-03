@@ -1,15 +1,25 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from "@chakra-ui/react";
 import { StampSelect } from "./StampSelect";
 import { Cannedver } from "./Cannedver";
+import { Dispatch, SetStateAction } from "react";
 
 type Props = {
   stampList: [number, string][];
   phraseList: [number, string][];
   userId: number;
   groupId: number;
+  flag: boolean;
+  setFlag: Dispatch<SetStateAction<boolean>>;
 };
 
-export const ChatTab = ({ stampList, phraseList, userId, groupId }: Props) => {
+export const ChatTab = ({
+  stampList,
+  phraseList,
+  userId,
+  groupId,
+  flag,
+  setFlag,
+}: Props) => {
   return (
     <>
       <Tabs variant="enclosed" bg="#D9D9D9">
@@ -23,6 +33,8 @@ export const ChatTab = ({ stampList, phraseList, userId, groupId }: Props) => {
               stampList={stampList}
               groupId={groupId}
               userId={userId}
+              flag={flag}
+              setFlag={setFlag}
             />
           </TabPanel>
           <TabPanel>
@@ -30,6 +42,8 @@ export const ChatTab = ({ stampList, phraseList, userId, groupId }: Props) => {
               phraseList={phraseList}
               groupId={groupId}
               userId={userId}
+              flag={flag}
+              setFlag={setFlag}
             />
           </TabPanel>
         </TabPanels>

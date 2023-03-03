@@ -1,14 +1,22 @@
 import { Button, Input, VStack } from "@chakra-ui/react";
 import axios from "axios";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 type Props = {
   phraseList: [number, string][];
   userId: number;
   groupId: number;
+  flag: boolean;
+  setFlag: Dispatch<SetStateAction<boolean>>;
 };
 
-export const Cannedver = ({ phraseList, userId, groupId }: Props) => {
+export const Cannedver = ({
+  phraseList,
+  userId,
+  groupId,
+  flag,
+  setFlag,
+}: Props) => {
   const [text, setText] = useState<string>("");
   const [phrase, setPhraseId] = useState<number>();
 
@@ -16,7 +24,9 @@ export const Cannedver = ({ phraseList, userId, groupId }: Props) => {
     const url = `http://localhost:8000/home/chat/send_message?user_id=${userId}&group_id=${groupId}&phrase_id=${phrase}&text=${text}`;
     axios
       .get(url)
-      .then((res) => {})
+      .then((res) => {
+        setFlag(!flag);
+      })
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.error(err);

@@ -3,7 +3,7 @@
 
 import { Box, Button, Image, VStack } from "@chakra-ui/react";
 import axios from "axios";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 //欲しいもの スタンプ画像のＵＲＬ
 //出力するもの 選択されたスタンプに振られた番号
@@ -12,16 +12,26 @@ type Props = {
   stampList: [number, string][];
   groupId: number;
   userId: number;
+  flag: boolean;
+  setFlag: Dispatch<SetStateAction<boolean>>;
 };
 
-export const StampSelect = ({ stampList, groupId, userId }: Props) => {
+export const StampSelect = ({
+  stampList,
+  groupId,
+  userId,
+  flag,
+  setFlag,
+}: Props) => {
   const [stickerId, setStickerId] = useState<number>();
 
   const StampDone = () => {
     const url = `http://localhost:8000/home/chat/send_sticker?user_id=${userId}&group_id=${groupId}&sticker_id=${stickerId}`;
     axios
       .get(url)
-      .then((res) => {})
+      .then((res) => {
+        setFlag(!flag);
+      })
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.error(err);

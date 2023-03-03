@@ -24,8 +24,7 @@ import { StampSelect } from "../StampSelect";
 import { UserIDSearch } from "../UserIDSearch";
 import { YourChat } from "../YourChat";
 import { PlusButton } from "../SearchIcon";
-import { Tab1 } from "../Tab";
-import { Cannedver } from "../Cannedver";
+
 import { MakeGroupNI } from "../MakeGroupNameImage";
 import { useState } from "react";
 import { ExceptMyselfChat } from "../ExceptMyselfChat";
@@ -279,7 +278,13 @@ export const Components = () => {
           <Heading size="lg">StampSelect</Heading>
           <Card variant="filled">
             <CardBody>
-              <StampSelect stampList={stampList} groupId={2} userId={1} />
+              <StampSelect
+                stampList={stampList}
+                groupId={2}
+                userId={1}
+                flag={isTemp}
+                setFlag={setIsTemp}
+              />
             </CardBody>
           </Card>
 

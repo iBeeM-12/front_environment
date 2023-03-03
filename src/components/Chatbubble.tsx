@@ -14,8 +14,12 @@ export const ChatBubble = ({ text, stamp }: Props) => {
   return (
     <>
       <Card>
-        {flag === "0" && <Text>{text}</Text>}
-        {flag !== "0" && <Image src={stamp} boxSize="100px" />}
+        {flag === "0" && (
+          <Text fontSize={32} color={"blue"}>
+            {text}
+          </Text>
+        )}
+        {flag !== "0" && <Image src={stamp} boxSize="150px" />}
       </Card>
     </>
   );
