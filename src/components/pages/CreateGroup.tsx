@@ -1,7 +1,5 @@
-import { Box, Center, Container, HStack } from "@chakra-ui/layout";
-import { ButtonOfCreateGroup } from "../ButtonOfCreateGroup";
-import { GroupIconSet } from "../GroupIconSet";
-import { InputGroupName } from "../InputGroupName";
+import { Box, Container, HStack } from "@chakra-ui/layout";
+import { MakeGroupNI } from "../MakeGroupNameImage";
 import { VSpacer } from "../molecules/Spacer";
 import { ReturnButton } from "../ReturnButton";
 import { UserIDSearch } from "../UserIDSearch";
@@ -12,21 +10,14 @@ export const CreateGroup = () => {
       <Container maxW="container.md">
         <Box bg="#E5D1C8">
           <Box display="flex" justifyContent="flex-end">
-            <HStack>
-              <ButtonOfCreateGroup />
-              <ReturnButton />
-            </HStack>
+            <ReturnButton />
           </Box>
           <VSpacer size={12} />
 
-          <InputGroupName />
-          <VSpacer size={12} />
-          <Center>
-            <GroupIconSet />
-          </Center>
+          <MakeGroupNI />
+
           <VSpacer size={4} />
 
-          <UserIDSearch />
           <VSpacer size={60} />
         </Box>
       </Container>

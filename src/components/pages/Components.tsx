@@ -28,6 +28,7 @@ import { UserIDSearch } from "../UserIDSearch";
 import { YourChat } from "../YourChat";
 import { PlusButton } from "../SearchIcon";
 import { Tab1, Tab2 } from "../Tab";
+import { MakeGroupNI } from "../MakeGroupNameImage";
 
 export const Components = () => {
   const memberList: [number, string, string, string][] = [
@@ -279,6 +280,15 @@ export const Components = () => {
           <Card variant="filled">
             <CardBody>
               <YourChat />
+            </CardBody>
+          </Card>
+
+          {/* MakeGroupNI (InputGroupNameとGroupIconSetを一つにしたやつです。)*/}
+          <VSpacer size={8} />
+          <Heading size="lg">MakeGroupNameImage</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <MakeGroupNI />
             </CardBody>
           </Card>
 
