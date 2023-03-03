@@ -1,59 +1,51 @@
 //チャットのスタンプ表示用吹き出し
 //スタンプバージョンと、定型文バージョンを用意
 
-import { Box, Button, HStack, Image } from "@chakra-ui/react";
-import { CannedList, StampList } from "../data/dummyData";
+import { Box, Button, Image, VStack } from "@chakra-ui/react";
+import axios from "axios";
+import { useState } from "react";
 
 //欲しいもの スタンプ画像のＵＲＬ
 //出力するもの 選択されたスタンプに振られた番号
-export const StampSelect = () => {
+
+type Props = {
+  stampList: [number, string][];
+  groupId: number;
+  userId: number;
+};
+
+export const StampSelect = ({ stampList, groupId, userId }: Props) => {
+  const [stickerId, setStickerId] = useState<number>();
+
+  const StampDone = () => {
+    const url = `http://localhost:8000/home/chat/send_sticker?user_id=${userId}&group_id=${groupId}&sticker_id=${stickerId}`;
+    axios
+      .get(url)
+      .then((res) => {})
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error(err);
+      });
+  };
+
   return (
     <>
       <Box w="390px" bg="C8C8C8" p={5}>
-        <HStack spacing={2}>
-          {StampList.map((stamp) => {
+        <VStack spacing={2}>
+          {stampList.map((stamp) => {
             return (
               <>
                 <Image
                   boxSize={20}
-                  src={stamp.img}
-                  key={stamp.num}
-                  onClick={() => {
-                    console.log(stamp.num); //バックエンドに渡すように変える
-                  }}
+                  src={stamp[1]}
+                  key={stamp[0]}
+                  onClick={() => setStickerId(stamp[0])}
                 />
               </>
             );
           })}
-        </HStack>
-      </Box>
-    </>
-  );
-};
-
-export const Cannedver = () => {
-  return (
-    <>
-      <Box w="390px" bg="C8C8C8" p={0}>
-        <HStack spacing={3}>
-          {CannedList.map((canned) => {
-            return (
-              <>
-                <Button
-                  fontSize="md"
-                  colorScheme="orange"
-                  variant="solid"
-                  size={"md"}
-                  key={canned.num}
-                  color="whitegray"
-                >
-                  {/* バックエンドに渡す値 */}
-                  {canned.str}
-                </Button>
-              </>
-            );
-          })}
-        </HStack>
+          <Button onClick={StampDone}>スタンプを送信</Button>
+        </VStack>
       </Box>
     </>
   );

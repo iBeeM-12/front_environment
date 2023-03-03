@@ -2,7 +2,6 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from "@chakra-ui/react";
 import { Chat } from "./Chat";
 import { MemberView } from "./MemberView";
 import { PlusButtonMember } from "./PlusButton";
-import { Cannedver, StampSelect } from "./StampSelect";
 
 type Props = {
   memberList: [number, string, string, string][];
@@ -39,27 +38,6 @@ export const Tab1 = ({ memberList }: Props) => {
             <Box minW="390px" minH="5000px" bg={"#E5D1C8"}>
               <Chat />
             </Box>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
-    </>
-  );
-};
-
-export const Tab2 = () => {
-  return (
-    <>
-      <Tabs variant="enclosed" bg="#D9D9D9">
-        <TabList>
-          <Tab>ネコスタンプ</Tab>
-          <Tab>定型文</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <StampSelect />
-          </TabPanel>
-          <TabPanel>
-            <Cannedver />
           </TabPanel>
         </TabPanels>
       </Tabs>
