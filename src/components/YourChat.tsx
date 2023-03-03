@@ -1,18 +1,21 @@
-import { Box, HStack, VStack } from "@chakra-ui/react";
-import { Chatbubble } from "./Chatbubble";
-import { ChatLeftIcon } from "./ChatLeftIcon";
-import { Chatname } from "./Chatname";
+import { HStack } from "@chakra-ui/react";
+import { ChatBubble } from "./Chatbubble";
+import { ExceptMyselfChat } from "./ExceptMyselfChat";
 
-export const YourChat = () => {
+type Props = {
+  id: number;
+  icon: string;
+  name: string;
+  text: string;
+  stamp: string;
+};
+
+export const YourChat = ({ id, icon, name, text, stamp }: Props) => {
   return (
     <>
       <HStack>
-        <VStack>
-          <Chatname />
-          <ChatLeftIcon />
-        </VStack>
-        <Chatbubble />
-        <Box bg="white" w="250px" p={2}></Box>
+        <ExceptMyselfChat id={id} icon={icon} name={name} />
+        <ChatBubble text={text} stamp={stamp} />
       </HStack>
     </>
   );

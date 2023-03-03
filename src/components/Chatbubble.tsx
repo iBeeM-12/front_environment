@@ -1,15 +1,21 @@
-import { Box, Image } from "@chakra-ui/react";
-import { ChatList } from "../data/dummyData";
+import { Card, Image, Text } from "@chakra-ui/react";
+import { useState } from "react";
+
 //受け取る情報　出力する画像(コメント)(chatlistがデーターベース)
 //送る情報なし
-export const Chatbubble = () => {
+type Props = {
+  text: string;
+  stamp: string;
+};
+
+export const ChatBubble = ({ text, stamp }: Props) => {
+  const [flag, setFlag] = useState<string>(stamp);
   return (
     <>
-      <Box bg="#D9D9D9" w="120px" h="120px" p={4}>
-        <Box boxSize="sm">
-          <Image src={ChatList[2].talk} boxSize="100px" />
-        </Box>
-      </Box>
+      <Card>
+        {flag === "0" && <Text>{text}</Text>}
+        {flag !== "0" && <Image src={stamp} boxSize="100px" />}
+      </Card>
     </>
   );
 };
