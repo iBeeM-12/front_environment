@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import { Card, CardBody, Container, Heading, VStack } from "@chakra-ui/react";
 import { VSpacer } from "../molecules/Spacer";
 import { Chat } from "../Chat";
@@ -16,7 +14,6 @@ import { HomeTop } from "../HomeTop";
 import { InputGroupName } from "../InputGroupName";
 import { MakeNewGroup } from "../MakeNewGroup";
 import { MemberView } from "../MemberView";
-import { MyAvatar } from "../MyAvatar";
 import { MyChat } from "../MyChat";
 import { ReadOrNot } from "../ReadOrNot";
 import { RemakeButton } from "../RemakeBottun";
@@ -28,19 +25,13 @@ import { UserIDSearch } from "../UserIDSearch";
 import { YourChat } from "../YourChat";
 import { PlusButton } from "../SearchIcon";
 import { Tab1, Tab2 } from "../Tab";
+import { Cannedver } from "../Cannedver";
 
 export const Components = () => {
   const memberList: [number, string, string, string][] = [
     [0, "image", "KJ", "2"],
     [1, "image2", "KJ2", "3"],
   ];
-
-  const [name, setName] = useState<[number, string, string, string]>([
-    0,
-    "a",
-    "aa",
-    "aaa",
-  ]);
 
   return (
     <>
@@ -57,6 +48,15 @@ export const Components = () => {
           <Card variant="filled">
             <CardBody>
               <ButtonOfCreateGroup />
+            </CardBody>
+          </Card>
+
+          {/* Cannedver */}
+          <VSpacer size={8} />
+          <Heading size="lg">Cannedver</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <Cannedver />
             </CardBody>
           </Card>
 

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { MyAvatar } from "./MyAvatar";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { VSpacer } from "./molecules/Spacer";
+import { HSpacer, VSpacer } from "./molecules/Spacer";
 
 //ホーム画面上部のコンポーネント
 // string[] ["hoge", "foo", "bar"] ☆
@@ -41,22 +41,25 @@ export const HomeTop = () => {
       {/* FIXME: スタイルをピクセルで指定しているためもう少しいい感じにする */}
       {name && (
         <Box key={MemberInfo0[1]}>
-          <Image
-            src={name[2]}
-            maxH={"150px"}
-            alt="name1"
-            onClick={() => {
-              navigate("/profile");
-            }}
-          />
-          <VSpacer size={4} />
+          <HStack>
+            <Image
+              src={name[2]}
+              alt="name1"
+              boxSize={32}
+              onClick={() => {
+                navigate("/profile");
+              }}
+            />
+            <VSpacer size={4} />
+            <HSpacer size={28} />
 
-          <Center>
-            <Box>
-              <Text fontSize="3xl">{name[1]}</Text>
-              <MyAvatar name={name} setName={setName} />
-            </Box>
-          </Center>
+            <Center>
+              <Box>
+                <Text fontSize="3xl">{name[1]}</Text>
+                <MyAvatar name={name} setName={setName} />
+              </Box>
+            </Center>
+          </HStack>
         </Box>
       )}
     </>

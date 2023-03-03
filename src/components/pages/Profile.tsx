@@ -1,4 +1,4 @@
-import { Box, Container, HStack, VStack } from "@chakra-ui/react";
+import { Box, Center, Container, HStack, VStack } from "@chakra-ui/react";
 import React from "react";
 import { FreeText } from "../FreeText";
 import { HistoryIconText } from "../HistoryIconText";
@@ -19,11 +19,14 @@ export const Profile = () => {
             </HStack>
           </Box>
           <VSpacer size={8} />
-          <HomeTop />
+          <Center>
+            <HomeTop />
+          </Center>
           <VSpacer size={16} />
           <VStack spacing={"3"}>
             <FreeText />
-            <Box bg="#FFFFFF" w="370px" borderRadius="md">
+            <VSpacer size={12} />
+            <Box bg="ThreeDFace" borderRadius="md">
               <HistoryIconText />
             </Box>
           </VStack>
