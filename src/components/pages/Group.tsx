@@ -1,9 +1,10 @@
 import { GroupTop } from "../GroupTop";
-import { Box, Container, VStack } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { Tab1 } from "../Tab";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { VSpacer } from "../molecules/Spacer";
 //グループ画面の枠
 
 export const Group = () => {
@@ -44,11 +45,11 @@ export const Group = () => {
   return (
     <>
       <Container maxW="container.md">
-        <VStack bg="#F6C745" spacing={1}>
+        <Box bg="#F6C745">
           {groupName && groupImage && (
             <GroupTop groupName={groupName} groupImage={groupImage} />
           )}
-          <Box h={"10px"}></Box>
+          <VSpacer size={12} />
           {memberList && (
             <Tab1
               memberList={memberList}
@@ -56,7 +57,7 @@ export const Group = () => {
               setIsAddMember={setIsAddMember}
             />
           )}
-        </VStack>
+        </Box>
       </Container>
     </>
   );

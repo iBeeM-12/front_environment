@@ -5,11 +5,7 @@ import { ChatList } from "../data/dummyData";
 export const Chatbubble = () => {
   return (
     <>
-      <Box bg="#D9D9D9" w="120px" h="120px" p={4}>
-        <Box boxSize="sm">
-          <Image src={ChatList[2].talk} boxSize="100px" />
-        </Box>
-      </Box>
+      <Image src={ChatList[2].talk} boxSize={32} />
     </>
   );
 };

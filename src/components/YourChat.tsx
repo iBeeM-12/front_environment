@@ -1,18 +1,17 @@
-import { Box, HStack, VStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import { Chatbubble } from "./Chatbubble";
 import { ChatLeftIcon } from "./ChatLeftIcon";
 import { Chatname } from "./Chatname";
+import { HSpacer } from "./molecules/Spacer";
 
 export const YourChat = () => {
   return (
     <>
+      <HSpacer size={12} />
       <HStack>
-        <VStack>
-          <Chatname />
-          <ChatLeftIcon />
-        </VStack>
+        <Chatname />
+        <ChatLeftIcon />
         <Chatbubble />
-        <Box bg="white" w="250px" p={2}></Box>
       </HStack>
     </>
   );

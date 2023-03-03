@@ -1,13 +1,14 @@
 import { Box, HStack } from "@chakra-ui/react";
 import { Chatbubble } from "./Chatbubble";
+import { HSpacer } from "./molecules/Spacer";
 
 export const MyChat = () => {
   return (
     <>
-      <HStack>
-        <Box bg="white" w="300px" p={2}></Box>
+      <Box display="flex" justifyContent="flex-end">
         <Chatbubble />
-      </HStack>
+        <HSpacer size={8} />
+      </Box>
     </>
   );
 };

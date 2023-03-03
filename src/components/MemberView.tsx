@@ -1,7 +1,7 @@
 import { Box, Button, HStack, Image, VStack } from "@chakra-ui/react";
 import { Avatar } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
-import { HSpacer } from "./molecules/Spacer";
+import { HSpacer, VSpacer } from "./molecules/Spacer";
 
 type Props = {
   memberList: [number, string, string, string][];
@@ -12,9 +12,8 @@ export const MemberView = ({ memberList }: Props) => {
     console.log(memberList);
   };
   return (
-    <Box bg={"#E5D1C8"} minH={"5000px"}>
+    <Box bg={"#E5D1C8"}>
       <VStack marginRight={100}>
-        <Button onClick={() => Log()}>ログ</Button>
         {memberList.map((member, i) => {
           return (
             <>
@@ -31,6 +30,7 @@ export const MemberView = ({ memberList }: Props) => {
           );
         })}
       </VStack>
+      <VSpacer size={40} />
     </Box>
   );
 };
