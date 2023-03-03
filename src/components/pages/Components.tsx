@@ -42,6 +42,7 @@ export const Components = () => {
     "aa",
     "aaa",
   ]);
+  const [isTemp, setIsTemp] = useState<boolean>(false);
 
   return (
     <>
@@ -259,7 +260,11 @@ export const Components = () => {
           <Card variant="filled">
             <CardBody>
               #Tab1
-              <Tab1 memberList={memberList} />
+              <Tab1
+                memberList={memberList}
+                isAddMember={isTemp}
+                setIsAddMember={setIsTemp}
+              />
               #Tab2
               <Tab2 />
             </CardBody>

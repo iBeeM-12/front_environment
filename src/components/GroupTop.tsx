@@ -24,7 +24,7 @@ export const GroupTop = ({ groupName, groupImage }: Props) => {
         <VStack>
           <HStack>
             <Box w="125px"></Box>
-            <RemakeButton />
+            {/* <RemakeButton /> */}
             <ReturnButton />
           </HStack>
           <Box h={"30px"} />

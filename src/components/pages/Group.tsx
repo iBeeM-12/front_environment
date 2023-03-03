@@ -13,6 +13,8 @@ export const Group = () => {
   const [memberList, setMemberList] =
     useState<[number, string, string, string][]>();
 
+  const [isAddMember, setIsAddMember] = useState<boolean>(false);
+
   useEffect(() => {
     const url = `http://localhost:8000/home/group/detail?group_id=${id}`;
     const url2 = `http://localhost:8000/home/group/member?group_id=${id}`;
@@ -37,7 +39,7 @@ export const Group = () => {
         // eslint-disable-next-line no-console
         console.error(err);
       });
-  });
+  }, [isAddMember]);
 
   return (
     <>
@@ -47,7 +49,13 @@ export const Group = () => {
             <GroupTop groupName={groupName} groupImage={groupImage} />
           )}
           <Box h={"10px"}></Box>
-          {memberList && <Tab1 memberList={memberList} />}
+          {memberList && (
+            <Tab1
+              memberList={memberList}
+              isAddMember={isAddMember}
+              setIsAddMember={setIsAddMember}
+            />
+          )}
         </VStack>
       </Container>
     </>
