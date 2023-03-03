@@ -78,15 +78,6 @@ export const Components = () => {
             </CardBody>
           </Card>
 
-          {/* Cannedver */}
-          <VSpacer size={8} />
-          <Heading size="lg">Cannedver</Heading>
-          <Card variant="filled">
-            <CardBody>
-              <Cannedver />
-            </CardBody>
-          </Card>
-
           {/* Chat */}
           <VSpacer size={8} />
           <Heading size="lg">Chat</Heading>
@@ -289,16 +280,6 @@ export const Components = () => {
           <Card variant="filled">
             <CardBody>
               <StampSelect stampList={stampList} groupId={2} userId={1} />
-            </CardBody>
-          </Card>
-
-          {/* Tab */}
-          <VSpacer size={8} />
-          <Heading size="lg">Tab</Heading>
-          <Card variant="filled">
-            <CardBody>
-              #Tab1
-              <Tab1 memberList={memberList} />
             </CardBody>
           </Card>
 
