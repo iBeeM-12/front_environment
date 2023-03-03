@@ -1,11 +1,38 @@
-import { Box, Button, HStack } from "@chakra-ui/react";
-import { CannedList } from "../data/dummyData";
+import { Button, Input, VStack } from "@chakra-ui/react";
+import axios from "axios";
+import { useState } from "react";
 
-export const Cannedver = () => {
+type Props = {
+  phraseList: [number, string][];
+  userId: number;
+  groupId: number;
+};
+
+export const Cannedver = ({ phraseList, userId, groupId }: Props) => {
+  const [text, setText] = useState<string>("");
+  const [phrase, setPhraseId] = useState<number>();
+
+  const PhraseDone = () => {
+    const url = `http://localhost:8000/home/chat/send_message?user_id=${userId}&group_id=${groupId}&phrase_id=${phrase}&text=${text}`;
+    axios
+      .get(url)
+      .then((res) => {})
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error(err);
+      });
+  };
+
   return (
     <>
-      <HStack spacing={3}>
-        {CannedList.map((canned) => {
+      <VStack spacing={3}>
+        <Input
+          value={text}
+          placeholder={"文字を入力"}
+          size="lg"
+          onChange={(event) => setText(event.target.value)}
+        />
+        {phraseList.map((canned) => {
           return (
             <>
               <Button
@@ -13,16 +40,17 @@ export const Cannedver = () => {
                 colorScheme="orange"
                 variant="solid"
                 minW={40}
-                key={canned.num}
+                key={canned[0]}
                 color="whitegray"
+                onClick={() => setPhraseId(canned[0])}
               >
-                {/* バックエンドに渡す値 */}
-                {canned.str}
+                {canned[1]}
               </Button>
             </>
           );
         })}
-      </HStack>
+        <Button onClick={PhraseDone}>定型文の送信</Button>
+      </VStack>
     </>
   );
 };

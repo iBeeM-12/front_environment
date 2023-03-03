@@ -1,10 +1,8 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from "@chakra-ui/react";
-import { Cannedver } from "./Cannedver";
 import { Chat } from "./Chat";
 import { MemberView } from "./MemberView";
 import { AddMamber } from "./pages/AddMember";
 import { PlusButtonMember } from "./PlusButton";
-import { StampSelect } from "./StampSelect";
 
 type Props = {
   memberList: [number, string, string, string][];
@@ -56,27 +54,6 @@ export const Tab1 = ({ memberList, isAddMember, setIsAddMember }: Props) => {
             <Box bg={"#E5D1C8"}>
               <Chat />
             </Box>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
-    </>
-  );
-};
-
-export const Tab2 = () => {
-  return (
-    <>
-      <Tabs variant="enclosed" bg="#D9D9D9">
-        <TabList>
-          <Tab>ネコスタンプ</Tab>
-          <Tab>定型文</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <StampSelect />
-          </TabPanel>
-          <TabPanel>
-            <Cannedver />
           </TabPanel>
         </TabPanels>
       </Tabs>

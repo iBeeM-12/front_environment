@@ -1,14 +1,16 @@
 import { Box, HStack } from "@chakra-ui/react";
-import { Chatbubble } from "./Chatbubble";
-import { HSpacer } from "./molecules/Spacer";
-
-export const MyChat = () => {
+import { ChatBubble } from "./Chatbubble";
+type Props = {
+  text: string;
+  stamp: string;
+};
+export const MyChat = ({ text, stamp }: Props) => {
   return (
     <>
-      <Box display="flex" justifyContent="flex-end">
-        <Chatbubble />
-        <HSpacer size={8} />
-      </Box>
+      <HStack>
+        <Box bg="white" w="300px" p={2}></Box>
+        <ChatBubble text={text} stamp={stamp} />
+      </HStack>
     </>
   );
 };
